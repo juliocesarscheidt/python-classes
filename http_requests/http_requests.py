@@ -1,29 +1,38 @@
-import json
 import os
-# pip install requests
+import json
+# pip install -r requirements.txt
 import requests
 
-SVC_NAME = os.environ.get('SVC_NAME')
-ENV_NAME = os.environ.get('ENV_NAME')
-NAMESPACE = os.environ.get('NAMESPACE')
-SVC_PORT = os.environ.get('SVC_PORT', 4080)
-
-API_TOKEN = os.environ.get('API_TOKEN', '')
-
-def make_request(url, method='GET', data=None):
-  auth = None
+def make_request(url, method='GET', token=None, data=None):
   headers = {
     'Content-Type': 'application/json;charset=UTF-8',
   }
-  headers.update({
-    'Authorization': 'Bearer ' + API_TOKEN,
-  })
-  response = requests.request(method=method, json=data, url=url, headers=headers, auth=auth)
+  if token is not None:
+    headers.update({
+      'Authorization': token,
+    })
+  response = requests.request(method=method, json=data,
+                              url=url, headers=headers)
   return response.json()
 
+API_SECRET_TOKEN = os.environ.get('API_SECRET_TOKEN',
+                                  'r9GwP4WRj8GKlhFNLJUyxjVN6ReRysY5wbNBGtTS944bBKk8Z6erVJ4HyQnu1X8u')
 
-url = 'http://kong-proxy/services'
-make_request(url, 'POST', payload)
+if __name__ in '__main__':
+  url = 'http://localhost:9000'
 
-services = make_request(url, 'GET')
+  response = make_request(f'{url}/message', 'GET',
+                          f'Token {API_SECRET_TOKEN}', None)
+  print(response)
+  print(response['message'])
+  # hello world
 
+  # change message
+  make_request(f'{url}/configuration', 'POST',
+               f'Token {API_SECRET_TOKEN}', {'message': 'Flask API'})
+
+  response = make_request(f'{url}/message', 'GET',
+                          f'Token {API_SECRET_TOKEN}', None)
+  print(response)
+  print(response['message'])
+  # Flask API
