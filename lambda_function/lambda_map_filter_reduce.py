@@ -1,51 +1,60 @@
-numeros = [1, 2, 3, 4, 5]
-quadrados_lambda = sorted(map(lambda x: x*x, numeros))
-print(quadrados_lambda)
-
-quadrados2 = [x*x for x in numeros]
-print(quadrados2)
-# [1, 4, 9, 16, 25]
-
-def power(x):
-  return x**2
-
-# lambda
-power_lambda = (lambda x: x**2)
-print(power_lambda(2))
+print((lambda x: x * x)(2))
 # 4
+print((lambda x, y: x * y)(2, 4))
+# 8
 
-nums = [i for i in range(1, 10)]
-print(nums)
-# [1, 2, 3, 4, 5, 6, 7, 8, 9]
+numbers = [1, 2, 3, 4, 5, 6]
+# numbers = [6, 5, 4, 3, 2, 1]
 
-# regular cubes
-cubes = [i**i for i in range(1, 10)]
+print("##################### lambda map #####################")
+
+print("##################### squares #####################")
+
+# using lambda with map
+squares_lambda = list(map(lambda x: x * x, numbers))
+# squares_lambda = sorted(map(lambda x: x * x, numbers))
+print(squares_lambda)
+# [1, 4, 9, 16, 25, 36]
+
+# using list comprehension
+squares_list_comprehension = [x * x for x in numbers]
+print(squares_list_comprehension)
+# [1, 4, 9, 16, 25, 36]
+
+print("##################### cubes #####################")
+
+def cube(x):
+  return x ** 3
+
+cube_lambda = lambda x: x ** 3
+
+# map using function
+cubes = list(map(cube, numbers))
 print(cubes)
-# [1, 4, 27, 256, 3125, 46656, 823543, 16777216, 387420489]
+# [1, 8, 27, 64, 125, 216]
 
-# map
-cubes_map = list(map(power, nums))
-print('cubes_map', cubes_map)
-# power_map [1, 4, 9, 16, 25, 36, 49, 64, 81]
+# map using lambda
+cubes = list(map(cube_lambda, numbers))
+print(cubes)
+# [1, 8, 27, 64, 125, 216]
 
-cubes_filter = list(filter(lambda x: x > 0 and x < 10, cubes))
-print(cubes_filter)
-# [1, 4]
+print("##################### lambda filter #####################")
 
-fn_soma = lambda x, y: x + y
-print(fn_soma(2, 2))
-# 4
+numbers_filter = list(filter(lambda x: x > 0 and x < 4, numbers))
+print(numbers_filter)
+# [1, 2, 3]
 
-print((lambda x, y: x + y)(2, 2))
-# 4
+# using lambda with filter
+evens_filter_lambda = list(filter(lambda x: x % 2 == 0, numbers))
+print(evens_filter_lambda)
+# [2, 4, 6]
 
-# step_fn
-step_fn = lambda x: 1 if x >= 1 else 0
-print(step_fn(2))
-# 1
+# using list comprehension
+evens_filter_list_comprehension = [x for x in numbers if x % 2 == 0]
+print(evens_filter_list_comprehension)
+# [2, 4, 6]
 
-print((lambda x: 1 if x >= 1 else 0)(2))
-# 1
+print("##################### lambda reduce #####################")
 
 from functools import reduce
 accumulator = 0
