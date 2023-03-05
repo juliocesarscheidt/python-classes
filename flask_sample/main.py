@@ -1,3 +1,4 @@
+# pip install -r requirements.txt
 from flask import Flask
 import json
 from datetime import datetime
