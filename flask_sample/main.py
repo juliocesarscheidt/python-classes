@@ -4,7 +4,7 @@ import sqlite3
 import logging
 import tempfile
 from markupsafe import escape
-from threading import Lock, current_thread
+from threading import current_thread
 from datetime import datetime
 from flask_httpauth import HTTPTokenAuth
 from flask import Flask, make_response, jsonify, request
@@ -17,8 +17,7 @@ logging.basicConfig(
 logger = logging.getLogger()
 
 # get temp directory
-temp_dir = tempfile.gettempdir()
-DB_PATH = temp_dir + "/database.db"
+DB_PATH = tempfile.gettempdir() + "/database.db"
 logger.info({"DB_PATH": DB_PATH})
 
 # global vars
@@ -82,12 +81,10 @@ def unauthorized(status_code):
 @auth.login_required
 def index():
   logger.info({"MESSAGE THREAD": current_thread().ident})
-
   # retrieve a cursor
   cursor = conn.cursor()
   message = cursor.execute("SELECT content FROM configuration WHERE name = ?", ['message']).fetchone()[0]
   cursor.close()
-
   response = jsonify(status='Success', message=message,
                      datetime=get_datetime_now(), path=request.path, method=request.method)
   return make_response(response, 200)
@@ -101,17 +98,11 @@ def configuration():
     response = jsonify(status='Error', message='Bad Request')
     return make_response(response, 400)
   message = str(escape(message)).strip()
-
-  lock = Lock()
-  lock.acquire()
-
   # retrieve a cursor
   cursor = conn.cursor()
   cursor.execute("UPDATE configuration SET content = ? WHERE name = ?", [message, 'message'])
   conn.commit() # transactional must commit
   cursor.close()
-
-  lock.release()
   response = jsonify(status='Accepted', message=message,
                      datetime=get_datetime_now(), path=request.path, method=request.method)
   return make_response(response, 202)
