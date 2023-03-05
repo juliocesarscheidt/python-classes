@@ -11,13 +11,12 @@ print(odds)
 print([x for x in numbers if x < 4])
 # [1, 2, 3]
 
-list_objects = [{
-  "id": i,
-  "name": "object_" + str(i),
-} for i in range(4)]
+list_objects = [{"id": i, "name": "object_" + str(i), }
+                for i in range(4)]
 
 print(list_objects)
-# [{'id': 0, 'name': 'object_0'}, {'id': 1, 'name': 'object_1'}, {'id': 2, 'name': 'object_2'}, {'id': 3, 'name': 'object_3'}]
+# [{'id': 0, 'name': 'object_0'}, {'id': 1, 'name': 'object_1'},
+# {'id': 2, 'name': 'object_2'}, {'id': 3, 'name': 'object_3'}]
 
 list_objects_filter = [obj for obj in list_objects if obj["id"] < 2]
 print(list_objects_filter)

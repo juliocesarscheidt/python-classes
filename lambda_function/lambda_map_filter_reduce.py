@@ -1,3 +1,5 @@
+from functools import reduce
+
 print((lambda x: x * x)(2))
 # 4
 print((lambda x, y: x * y)(2, 4))
@@ -23,10 +25,14 @@ print(squares_list_comprehension)
 
 print("##################### cubes #####################")
 
-def cube(x):
-  return x ** 3
 
-cube_lambda = lambda x: x ** 3
+def cube(x):
+    return x ** 3
+
+
+def cube_lambda(x):
+    return (lambda x: x ** 3)(x)
+
 
 # map using function
 cubes = list(map(cube, numbers))
@@ -56,7 +62,6 @@ print(evens_filter_list_comprehension)
 
 print("##################### lambda reduce #####################")
 
-from functools import reduce
 accumulator = 0
 print(reduce(lambda x, y: x + y, [1, 2, 3, 4], accumulator))
 # 1 + 2 = 3
