@@ -1,4 +1,4 @@
-
+# Python
 
 > Zen of Python - Guiding principles for Python’s design:
 
@@ -27,7 +27,9 @@ If the implementation is easy to explain, it may be a good idea.
 Namespaces are one honking great idea -- let's do more of those!
 ```
 
-> PEP 8  code style guide for Python:
+> PEP 8  code style guide for Python
+
+Checking coding conventions
 
 ```bash
 pip install pycodestyle
@@ -36,6 +38,8 @@ pycodestyle ./**/*.py
 ```
 
 > Linter
+
+Lint code with Black
 
 ```bash
 docker container run --rm --name black \
