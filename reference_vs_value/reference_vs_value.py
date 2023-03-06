@@ -14,12 +14,18 @@ check_memory_addr(var_b)
 # however, changing one will not reflect
 # on the other one, because primitive types
 # are handled by value
-var_b = 20
-print('var_a', var_a)
-# var_a 10
-print('var_b', var_b)
-# var_b 20
+# instead they change their memory address
 var_a = 30
+check_memory_addr(var_a)
+# example: 10915424
+check_memory_addr(var_b)
+# example: 10914784
+
+print('var_a', var_a)
+# var_a 30
+print('var_b', var_b)
+# var_b 10
+var_b = 20
 print('var_a', var_a)
 # var_a 30
 print('var_b', var_b)
@@ -55,20 +61,26 @@ def change_complex_value(variable: object):
 var_d = [0, 1, 2, 3, 4, 5, 6]
 print('var_d', var_d)
 # var_d [0, 1, 2, 3, 4, 5, 6]
+var_e = var_d
+print('var_e', var_e)
+# var_e [0, 1, 2, 3, 4, 5, 6]
+
 change_complex_value(var_d)
 # variable complex before [0, 1, 2, 3, 4, 5, 6]
 # variable complex after [None, 1, 2, 3, 4, 5, 6]
 print('var_d', var_d)
 # var_d [None, 1, 2, 3, 4, 5, 6]
-
-var_e = var_d
 print('var_e', var_e)
 # var_e [None, 1, 2, 3, 4, 5, 6]
 
+check_memory_addr(var_d[0])
+# 10306432
+check_memory_addr(var_e[0])
+# 10306432
 check_memory_addr(var_d)
-# example: 140021133671944
+# example: 140687739825672
 check_memory_addr(var_e)
-# example: 140021133671944
+# example: 140687739825672
 
 var_e[1] = None
 print('var_e', var_e)
