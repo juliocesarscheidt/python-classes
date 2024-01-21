@@ -1,17 +1,5 @@
 
 
-# linguagens interpretadas
-# linguagens compiladas
-
-
-# base
-variaveis
-  sao armazenadas em memória, e então recuperadas quando acessadas
-  possuem endereço na memória
-
-funções/metodos
-
-
 # computador entende binario
 0         0000
 1         0001
@@ -32,6 +20,53 @@ funções/metodos
 
 
 
+# linguagens interpretadas
+  Linguagem interpretada é uma linguagem de programação em que o código fonte é executado por um programa de computador chamado interpretador (ao invés de serem compiladas), onde a interpretação e a execução do programa acontecem em tempo real e independente do sistema operacional utilizado.
+
+  Geralmente possuem um REPL (read eval print loop)
+
+  Exemplos: javascript, python, php, ruby, shellscript
+
+# linguagens compiladas
+  Linguagem compilada é uma linguagem de programação em que o código fonte, nessa linguagem, é executado diretamente pelo sistema operacional ou pelo processador (ou alguma máquina virtual, ex. JVM do Java), após ser traduzido por meio de um processo chamado compilação, usando um programa de computador chamado compilador, para uma linguagem de baixo nível, como linguagem de montagem (assembly) ou código de máquina
+  
+  Exemplos: java, csharp, c, c++, golang, rust
+
+
+
+# paradigmas
+Orientação a objeto
+  Modela o programa em termos de objetos, que são instâncias de classes que encapsulam dados/atributos e comportamentos/metodos
+  Exemplos: csharp, java, c++, typescript
+  Outras linguagens como python, php, javascript, incorporam alguns conceitos da POO
+
+Procedural
+  Organiza o programa como uma sequência de procedimentos ou rotinas.
+  Exemplos: fortran, c
+
+Funcional
+  Baseia-se no conceito de funções matemáticas, evitando estados mutáveis e dados globais.
+  Exemplos: haskell, lisp, scala
+  Outras linguagens incorporam conceitos funcionais, como javascript, python, e até java nas versões mais atuais
+
+Orientado a Eventos
+  O programa responde a eventos gerados pelo sistema ou usuário
+  Exemplos: javascript, visual basic
+
+
+
+# base das linguagens
+variaveis
+  sao armazenadas em memória, e então recuperadas quando acessadas
+  possuem endereço na memória
+  - algumas linguagens possuem também constantes
+
+funções/metodos - procedimentos
+  encapsulam lógicas, trechos, sequencias de instruções em algo que pode ser reutilizado posteriormente
+
+
+
+# tipos primitivos
 
 # string
 nome = "julio"
@@ -40,29 +75,65 @@ print(type(nome))
 
 # int
 numero = 1
-print(numero)
 print(type(numero))
 
 # float
 flutuante = 1.50
-print(flutuante)
 print(type(flutuante))
 
 # bool
 booleano = True
-print(booleano)
 print(type(booleano))
 
 
 
-operadores aritméticas
-+                   2 + 10 = 12       (se ambos forem int, o resultado é int, senão o resultado é float)
--                   8 - 2 = 6         (se ambos forem int, o resultado é int, senão o resultado é float)
-*                   2 * 4 = 8         (se ambos forem int, o resultado é int, senão o resultado é float)
-/                   10 / 5 = 2.0      (resultado é float)
-**                  4 ** 2 = 16
-% resto             5 % 2 = 1
-square root         16 ** (1/2) = 4
+# tipos complexos
+
+# lista/vetor
+# lista = [1, 2]
+lista = list()
+lista.append(1)
+lista.append(2)
+print(lista)
+print(type(lista))
+
+matriz = [[1, 2], [3, 4]]
+print(type(matriz))
+
+# dicionario/mapa - armazena chave e valor
+# dicionario = {"chave_1": "valor_1"}
+dicionario = dict()
+dicionario["chave_1"]  = "valor_1"
+print(type(dicionario))
+
+# conjunto - armazena valores unicos, inordenado
+# conjunto = {'a', 'b', 'c', 'd'}
+conjunto = set()
+conjunto.add("a")
+conjunto.add("b")
+print(conjunto)
+
+# tupla - imutavel, nao pode ser alterada
+# tupla_simples = 0, 1, 2
+tupla_simples = (0, 1, 2)
+tupla_simples = tuple()
+
+print(tupla_simples)
+print(type(tupla_simples))
+
+tupla_um_elemento = (0,)
+print(tupla_um_elemento)
+print(type(tupla_um_elemento))
+
+
+
+# operadores aritméticos
+adição +                    2 + 10 = 12       (se ambos forem int, o resultado é int, senão o resultado é float)
+subtração -                 8 - 2 = 6         (se ambos forem int, o resultado é int, senão o resultado é float)
+multiplicação *             2 * 4 = 8         (se ambos forem int, o resultado é int, senão o resultado é float)
+divisão /                   10 / 5 = 2.0      (resultado é float)
+exponenciação **            4 ** 2 = 16
+resto %                     5 % 2 = 1
 
 
 numero1 = 15
@@ -73,7 +144,7 @@ numero1 + numero2
 
 
 
-comparadores
+# comparadores
 ==                  1 == 1    => True     (compara valores)
 >=                  2 >= 4    => False
 <=                  2 <= 4    => True
@@ -81,15 +152,27 @@ comparadores
 <                   2 < 8     => True
 !=                  2 != 8    => True    (compara valores)
 
+is                  compara referência
+
+
 numero1 == numero2
 False
 
+lista_a = [0, 1, 2]
+lista_b = [0, 1, 2]
+
+lista_a is lista_b
+# False
+lista_a == lista_b
+# True
 
 
-operadores booleanos
+
+# operadores booleanos
 and         E
 or          OU
 not         NÃO
+
 
 
 
@@ -155,6 +238,15 @@ pass
 # funções
 def => definir função
 
+def funcao() -> str:
+    return "Hello World"
+
+print(type(funcao))
+# <class 'function'>
+print(funcao())
+# "Hello World"
+
+
 def dizer_ola(nome: str, idade: int):
   print("ola pessoa " + nome + " de idade " + str(idade))
   print("ola pessoa {} de idade {}".format(nome, idade))
@@ -206,14 +298,15 @@ finally:
 
 
 
-# paradigmas
-orientação a objeto
-funcional
-procedural
 
+# modulos
+from math import sqrt
 
+print(sqrt(4))
+# 2.0
 
-# packages
+# square root         16 ** (1/2) = 4
+print(4 ** (1/2))
 
 
 
