@@ -1,5 +1,8 @@
 
 
+# Linguagens de Programação
+
+
 # computador entende binario
 0         0000
 1         0001
@@ -12,24 +15,25 @@
 8         1000
 9         1001
 10        1010
-11        1011
-12        1100
-13        1101
-14        1110
-15        1111
+...
 
 
 
 # linguagens interpretadas
-  Linguagem interpretada é uma linguagem de programação em que o código fonte é executado por um programa de computador chamado interpretador (ao invés de serem compiladas), onde a interpretação e a execução do programa acontecem em tempo real e independente do sistema operacional utilizado.
+  Linguagem interpretada é uma linguagem de programação em que o código fonte
+  é executado por um programa de computador chamado interpretador (ao invés de serem compiladas),
+  onde a interpretação e a execução do programa acontecem em tempo real e independente do sistema operacional utilizado.
 
   Geralmente possuem um REPL (read eval print loop)
 
   Exemplos: javascript, python, php, ruby, shellscript
 
 # linguagens compiladas
-  Linguagem compilada é uma linguagem de programação em que o código fonte, nessa linguagem, é executado diretamente pelo sistema operacional ou pelo processador (ou alguma máquina virtual, ex. JVM do Java), após ser traduzido por meio de um processo chamado compilação, usando um programa de computador chamado compilador, para uma linguagem de baixo nível, como linguagem de montagem (assembly) ou código de máquina
-  
+  Linguagem compilada é uma linguagem de programação em que o código fonte, nessa linguagem,
+  é executado diretamente pelo sistema operacional ou pelo processador (ou alguma máquina virtual, ex. JVM do Java),
+  após ser traduzido por meio de um processo chamado compilação, usando um programa de computador chamado compilador,
+  para uma linguagem de baixo nível, como linguagem de montagem (assembly) ou código de máquina
+
   Exemplos: java, csharp, c, c++, golang, rust
 
 
