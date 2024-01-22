@@ -81,7 +81,7 @@ Estabelece como as instruções devem ser escritas para que o compilador ou inte
 Exemplos:
   palavras-chave: if, else, for, while, ...
 
-  delimitadores: delimitam os trechos de código, exemplo ";"
+  delimitadores: delimitam os trechos de código, exemplo ";" "{" "}"
 
   indentação: necessário uso de indentação com "tab" em algumas linguagem
 
@@ -91,6 +91,8 @@ Exemplos:
     /* ... */
 
 
+
+# iniciando com Python!
 
 # tipos primitivos
 
