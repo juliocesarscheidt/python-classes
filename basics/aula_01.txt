@@ -3,7 +3,8 @@
 # Linguagens de Programação
 
 Uma linguagem de programação é um conjunto de instruções escritas de forma padronizada, agindo como intermediário entre o programador humano e a máquina/computador.
-Funcionam como "receitas de bolo", onde são descritos o passo a passo que a máquina deve executar, através das instruções codificadas nos algoritmos.
+
+Algoritmos funcionam como "receitas de bolo", onde são descritos o passo a passo que a máquina deve executar.
 
 
 # computador entende binario
@@ -107,6 +108,10 @@ print(type(numero))
 
 # float
 flutuante = 1.50
+print(flutuante)
+# 1.5
+print("%.2f" % flutuante)
+# 1.50
 print(type(flutuante))
 
 # bool
@@ -119,28 +124,52 @@ print(type(booleano))
 
 # lista/vetor
 # lista = [1, 2]
-lista = list(1, 2)
+lista = list([1, 2])
 print(lista)
+# [1, 2]
+lista.append(3) # adiciona ao final da lista
+print(lista[2])
+# 3
+lista.pop() # remove o ultimo elemento e o retorna
+# 3
+print(lista)
+# [1, 2]
 print(type(lista))
 
-matriz = [[1, 2], [3, 4]]
+matriz = [[1, 2],
+          [3, 4]]
+print(matriz)
+# [[1, 2], [3, 4]]
+
+print(matriz[0][0])
+# 1
+print(matriz[0][1])
+# 2
+print(matriz[1][0])
+# 3
+print(matriz[1][1])
+# 4
+
 print(type(matriz))
+# <class 'list'>
 
 # dicionario/mapa - armazena chave e valor
-# dicionario = {"chave_1": "valor_1"}
-dicionario = dict()
-dicionario["chave_2"]  = "valor_2"
+dicionario = {"chave_1": "valor_1"}
+# dicionario = dict({"chave_1": "valor_1"})
+print(dicionario)
+
+dicionario["chave_2"] = "valor_2"
 print(type(dicionario))
 
 # conjunto - armazena valores unicos, inordenado
 conjunto = {'a', 'b', 'c', 'd'}
-# conjunto = set(['a', 'b', 'c', 'd'])
+# conjunto = set({'a', 'b', 'c', 'd'})
 print(conjunto)
 
 # tupla - imutavel, nao pode ser alterada
 # tupla_simples = 0, 1, 2
 tupla_simples = (0, 1, 2)
-tupla_simples = tuple()
+# tupla_simples = tuple((0, 1, 2))
 
 print(tupla_simples)
 print(type(tupla_simples))
