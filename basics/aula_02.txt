@@ -18,7 +18,7 @@ numero1 + numero2
 
 
 
-# comparadores
+# operadores de comparação
 ==                  1 == 1    => True     (compara valores)
 >=                  2 >= 4    => False
 <=                  2 <= 4    => True
@@ -42,10 +42,11 @@ lista_a == lista_b
 
 
 
-# operadores booleanos
-and         E
-or          OU
-not         NÃO
+
+# operadores lógicos/booleanos
+and         E               (&&)
+or          OU              (||)
+not         NÃO             (!)
 
 
 

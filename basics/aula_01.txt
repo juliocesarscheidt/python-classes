@@ -2,8 +2,8 @@
 
 # Linguagens de Programação
 
-A linguagem de programação é um conjunto de instruções escritas de forma padronizada, agindo como intermediário entre o programador humano e a máquina/computador.
-Funcionam como "receitas de bolo", onde são descritos o passo a passo que a máquina deve executar.
+Uma linguagem de programação é um conjunto de instruções escritas de forma padronizada, agindo como intermediário entre o programador humano e a máquina/computador.
+Funcionam como "receitas de bolo", onde são descritos o passo a passo que a máquina deve executar, através das instruções codificadas nos algoritmos.
 
 
 # computador entende binario
@@ -16,8 +16,6 @@ Funcionam como "receitas de bolo", onde são descritos o passo a passo que a má
 6         0110
 7         0111
 8         1000
-9         1001
-10        1010
 ...
 
 
@@ -42,14 +40,14 @@ Funcionam como "receitas de bolo", onde são descritos o passo a passo que a má
 
 
 # paradigmas
-Orientação a objeto
+Procedural/imperativa
+  Organiza o programa como uma sequência de procedimentos ou rotinas.
+  Exemplos: fortran, c
+
+Orientado a objetos OO - programação orientada a objetos POO
   Modela o programa em termos de objetos, que são instâncias de classes que encapsulam dados/atributos e comportamentos/metodos
   Exemplos: csharp, java, c++, typescript
   Outras linguagens como python, php, javascript, incorporam alguns conceitos da POO
-
-Procedural
-  Organiza o programa como uma sequência de procedimentos ou rotinas.
-  Exemplos: fortran, c
 
 Funcional
   Baseia-se no conceito de funções matemáticas, evitando estados mutáveis e dados globais.
@@ -59,6 +57,8 @@ Funcional
 Orientado a Eventos
   O programa responde a eventos gerados pelo sistema ou usuário
   Exemplos: javascript, visual basic
+
+Existem outras além destas, como Orientada a Aspectos, Baseado em Restrições.
 
 
 
@@ -70,6 +70,25 @@ variaveis
 
 funções/metodos - procedimentos
   encapsulam lógicas, trechos, sequencias de instruções em algo que pode ser reutilizado posteriormente
+
+
+
+# sintaxe
+Regras que definem a estrutura gramatical dos elementos em um código fonte.
+
+Estabelece como as instruções devem ser escritas para que o compilador ou interpretador da linguagem possa compreendê-las e executá-las corretamente.
+
+Exemplos:
+  palavras-chave: if, else, for, while, ...
+
+  delimitadores: delimitam os trechos de código, exemplo ";"
+
+  indentação: necessário uso de indentação com "tab" em algumas linguagem
+
+  comentários:
+    # ...
+    // ...
+    /* ... */
 
 
 
