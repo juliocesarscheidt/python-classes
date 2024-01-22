@@ -2,6 +2,9 @@
 
 # Linguagens de Programação
 
+A linguagem de programação é um conjunto de instruções escritas de forma padronizada, agindo como intermediário entre o programador humano e a máquina/computador.
+Funcionam como "receitas de bolo", onde são descritos o passo a passo que a máquina deve executar.
+
 
 # computador entende binario
 0         0000
