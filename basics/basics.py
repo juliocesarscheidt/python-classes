@@ -28,68 +28,11 @@ def check_bool(value: bool) -> bool:
     print("check_bool")
     return value is True
 
-
 print(check_bool(True) or check_bool(False))
 # check_bool
 # True
 
 print(not True)
-# False
-
-print("#####################")
-
-# class
-# "class" is used to define classes
-# def
-# "def" is used to define functions/methods
-
-# equality operators
-# "==" stands for "value" equality
-# It's used to know if two objects have the same value.
-
-# "is" stands for "reference" equality
-# It's used to know if two references refer (or point) to the same object.
-
-
-class Person(object):
-    name: str
-
-    def __init__(self, name: str) -> None:
-        self.name = name
-
-    def __eq__(self, other: object) -> bool:
-        print('__eq__ called')
-        if isinstance(other, Person):
-            if other.name == self.name:
-                return True
-        return False
-
-    def __ne__(self, other: object) -> bool:
-        print('__ne__ called')
-        return not self.__eq__(other)
-
-
-person1 = Person("Julio")
-person2 = Person("Julio")
-
-print(id(person1))  # returns object memory address
-# 140228566496536
-
-print(id(person2))  # returns object memory address
-# 140514192487928
-
-print(person1 is person2)
-# False
-
-# == calls __eq__ method
-print(person1 == person2)
-# __eq__ called
-# True
-
-# != calls __ne__ method
-print(person1 != person2)
-# __ne__ called
-# __eq__ called
 # False
 
 print("#####################")

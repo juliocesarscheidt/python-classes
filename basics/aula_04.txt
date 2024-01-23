@@ -20,6 +20,11 @@ python script.py
 # funções
 def => definir função
 
+# docstring - serve para documentar funções
+"""
+Input: no input
+Returns a static string
+"""
 def funcao() -> str:
     return "Hello World"
 
