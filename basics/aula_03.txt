@@ -110,42 +110,6 @@ pass
 
 
 
-# funções
-def => definir função
-
-def funcao() -> str:
-    return "Hello World"
-
-print(type(funcao))
-# <class 'function'>
-print(funcao())
-# "Hello World"
-
-
-def dizer_ola(nome: str, idade: int):
-  print("ola pessoa " + nome + " de idade " + str(idade))
-  print("ola pessoa {} de idade {}".format(nome, idade))
-  print("ola pessoa %s de idade %d" % (nome, idade))
-  print(f"ola pessoa {nome} de idade {idade}")
-
-dizer_ola("julio", 50)
-dizer_ola(nome="julio", idade=50)
-# dizer_ola(idade=50, nome="julio")
-
-
-
-
-# modulos
-from math import sqrt
-
-print(sqrt(4))
-# 2.0
-
-# square root         16 ** (1/2) = 4
-print(4 ** (1/2))
-
-
-
 
 
 
