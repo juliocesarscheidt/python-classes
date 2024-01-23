@@ -1,5 +1,21 @@
 
 
+# primeiro script
+script.py
+
+name = input("Digite seu nome:")
+print("name", name)
+
+if name.startswith("j") or name.startswith("J"):
+  print(f"O nome {name} começa com J")
+else:
+  print(f"O nome {name} NÃO começa com J")
+
+# executar
+python script.py
+
+
+
 # função
 # tempo = distancia / velocidade media
 
@@ -31,6 +47,8 @@ print(calcula_tempo_entre(4, 0))
 # ZeroDivisionError: division by zero
 
 
+
+# error handling
 try:
   print(10 / 0)
 except ZeroDivisionError as e:
