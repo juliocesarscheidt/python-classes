@@ -1,46 +1,148 @@
 
 
-# fun��o
-# tempo = distancia / velocidade media
 
-def calcula_tempo_entre(distancia, velocidade_media):
-  tempo_em_horas = distancia / velocidade_media
-  tempo_em_minutos = tempo_em_horas * 60
-  minutos_resto = tempo_em_minutos % 60
-  horas_exatas = tempo_em_minutos // 60
-  return f"{horas_exatas} horas e {minutos_resto} minutos" \
-    if \
-      horas_exatas > 0 \
-    else \
-      f"{minutos_resto} minutos"
-  
-
-400 km, 40 km/h
-print(calcula_tempo_entre(400, 40))
-# 10.0 horas e 0.0 minutos
-
-4 km, 40 km/h
-print(calcula_tempo_entre(4, 40))
-# 6.0 minutos
-
-4 km, 15 km/h
-print(calcula_tempo_entre(4, 15))
-16.0 minutos
-
-print(calcula_tempo_entre(4, 0))
-# ZeroDivisionError: division by zero
+# operadores aritméticos
+adição +                    2 + 10 = 12       (se ambos forem int, o resultado é int, senão o resultado é float)
+subtração -                 8 - 2 = 6         (se ambos forem int, o resultado é int, senão o resultado é float)
+multiplicação *             2 * 4 = 8         (se ambos forem int, o resultado é int, senão o resultado é float)
+divisão /                   10 / 5 = 2.0      (resultado é float)
+exponenciação **            4 ** 2 = 16
+resto %                     5 % 2 = 1
 
 
-try:
-  print(10 / 0)
-except ZeroDivisionError as e:
-  print("Ocorreu um erro aqui =>", e)
-finally:
-  print("Vai cair aqui de qualquer jeito")
+numero1 = 15
+numero2 = 20
+
+numero1 + numero2
+35
 
 
 
+# operadores de comparação
+==                  1 == 1    => True     (compara valores)
+>=                  2 >= 4    => False
+<=                  2 <= 4    => True
+>                   2 > 8     => False
+<                   2 < 8     => True
+!=                  2 != 8    => True    (compara valores)
 
+is                  compara referência
+
+
+numero1 == numero2
+False
+
+lista_a = [0, 1, 2]
+lista_b = [0, 1, 2]
+
+lista_a is lista_b
+# False
+lista_a == lista_b
+# True
+
+
+
+
+# operadores lógicos/booleanos
+and         E               (&&)
+or          OU              (||)
+not         NÃO             (!)
+
+
+
+
+# condicionais / controle de fluxo
+SE (expressão booleana)
+if                            if numero1 == numero2:
+                                print("numero1 e igual ao numero2")
+
+SE ENTÂO (expressão booleana)
+elif                          elif numero1 > numero2:
+                                print("numero1 e maior que o numero2")
+                    
+SENÂO
+else                          else:
+                                print("numero1 e menor que o numero2")
+
+
+if numero1 == numero2:
+  print("numero1 e igual ao numero2")
+else:
+  print("numero1 e diferente do numero2")
+                                
+
+
+# loops
+PARA (cada elemento
+for                           for i in range(0, 10):
+                                print(i)
+
+ENQUANTO
+while                         i = 0
+                              while i < 10:
+                                print(i)
+                                i += 1
+
+# controle de fluxo
+INTERROMPER
+break
+                              for i in range(0, 10):
+                                if i == 5:
+                                  break
+                                else:
+                                  print(i)
+
+CONTINUAR
+continue
+                              for i in range(0, 10):
+                                if i == 5:
+                                  continue
+                                else:
+                                  print(i)
+
+AVANÇAR
+pass
+                              for i in range(0, 10):
+                                if i == 5:
+                                  pass
+                                else:
+                                  print(i)
+
+
+
+# funções
+def => definir função
+
+def funcao() -> str:
+    return "Hello World"
+
+print(type(funcao))
+# <class 'function'>
+print(funcao())
+# "Hello World"
+
+
+def dizer_ola(nome: str, idade: int):
+  print("ola pessoa " + nome + " de idade " + str(idade))
+  print("ola pessoa {} de idade {}".format(nome, idade))
+  print("ola pessoa %s de idade %d" % (nome, idade))
+  print(f"ola pessoa {nome} de idade {idade}")
+
+dizer_ola("julio", 50)
+dizer_ola(nome="julio", idade=50)
+# dizer_ola(idade=50, nome="julio")
+
+
+
+
+# modulos
+from math import sqrt
+
+print(sqrt(4))
+# 2.0
+
+# square root         16 ** (1/2) = 4
+print(4 ** (1/2))
 
 
 
