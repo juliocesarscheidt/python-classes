@@ -49,67 +49,40 @@ or          OU              (||)
 not         NÃO             (!)
 
 
+# AND
+True and True
+# True
+
+True and False
+# False
+
+False and True
+# False
+
+False and False
+# False
 
 
-# condicionais / controle de fluxo
-SE (expressão booleana)
-if                            if numero1 == numero2:
-                                print("numero1 e igual ao numero2")
+# OR
+True or True
+# True
 
-SE ENTÂO (expressão booleana)
-elif                          elif numero1 > numero2:
-                                print("numero1 e maior que o numero2")
-                    
-SENÂO
-else                          else:
-                                print("numero1 e menor que o numero2")
+True or False
+# True
 
+False or True
+# True
 
-if numero1 == numero2:
-  print("numero1 e igual ao numero2")
-else:
-  print("numero1 e diferente do numero2")
-                                
+False or False
+# False
 
 
-# loops
-PARA (cada elemento
-for                           for i in range(0, 10):
-                                print(i)
+# NOT
+not True
+# False
 
-ENQUANTO
-while                         i = 0
-                              while i < 10:
-                                print(i)
-                                i += 1
-
-# controle de fluxo
-INTERROMPER
-break
-                              for i in range(0, 10):
-                                if i == 5:
-                                  break
-                                else:
-                                  print(i)
-
-CONTINUAR
-continue
-                              for i in range(0, 10):
-                                if i == 5:
-                                  continue
-                                else:
-                                  print(i)
-
-AVANÇAR
-pass
-                              for i in range(0, 10):
-                                if i == 5:
-                                  pass
-                                else:
-                                  print(i)
-
-
-
+not False
+# True
 
 
 

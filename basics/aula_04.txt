@@ -1,75 +1,62 @@
 
 
-# primeiro script
-script.py
 
-name = input("Digite seu nome:")
-print("name", name)
+# condicionais / controle de fluxo
+SE (expressÃ£o booleana)
+if                            if numero1 == numero2:
+                                print("numero1 e igual ao numero2")
 
-if name.startswith("j") or name.startswith("J"):
-  print(f"O nome {name} começa com J")
+SE ENTÃ‚O (expressÃ£o booleana)
+elif                          elif numero1 > numero2:
+                                print("numero1 e maior que o numero2")
+                    
+SENÃ‚O
+else                          else:
+                                print("numero1 e menor que o numero2")
+
+
+if numero1 == numero2:
+  print("numero1 e igual ao numero2")
 else:
-  print(f"O nome {name} NÃO começa com J")
-
-# executar
-python script.py
+  print("numero1 e diferente do numero2")
+                                
 
 
+# loops
+PARA (cada elemento
+for                           for i in range(0, 10):
+                                print(i)
 
+ENQUANTO
+while                         i = 0
+                              while i < 10:
+                                print(i)
+                                i += 1
 
-# funções
-def => definir função
+# controle de fluxo
+INTERROMPER
+break
+                              for i in range(0, 10):
+                                if i == 5:
+                                  break
+                                else:
+                                  print(i)
 
-# docstring - serve para documentar funções
-"""
-Input: no input
-Returns a static string
-"""
-def funcao() -> str:
-    return "Hello World"
+CONTINUAR
+continue
+                              for i in range(0, 10):
+                                if i == 5:
+                                  continue
+                                else:
+                                  print(i)
 
-print(type(funcao))
-# <class 'function'>
-print(funcao())
-# "Hello World"
-
-
-def dizer_ola(nome: str, idade: int):
-  print("ola pessoa " + nome + " de idade " + str(idade))
-  print("ola pessoa {} de idade {}".format(nome, idade))
-  print("ola pessoa %s de idade %d" % (nome, idade))
-  print(f"ola pessoa {nome} de idade {idade}")
-
-dizer_ola("julio", 50)
-dizer_ola(nome="julio", idade=50)
-# dizer_ola(idade=50, nome="julio")
-
-
-
-
-# modulos
-from math import sqrt
-
-print(sqrt(4))
-# 2.0
-
-# square root         16 ** (1/2) = 4
-print(4 ** (1/2))
-
-
-
-
-# error handling
-try:
-  print(10 / 0)
-except ZeroDivisionError as e:
-  print("Ocorreu um erro aqui =>", e)
-finally:
-  print("Vai cair aqui de qualquer jeito")
-
-
-
-
+AVANÃ‡AR
+pass
+                              for i in range(0, 10):
+                                if i == 5:
+                                  pass
+                                else:
+                                  print(i)
 
 
 
