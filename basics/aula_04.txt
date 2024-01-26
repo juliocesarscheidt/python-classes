@@ -1,64 +1,102 @@
 
 
+numero1 = 15
+numero2 = 20
+
 
 # condicionais / controle de fluxo
-SE (expressão booleana)
-if                            if numero1 == numero2:
-                                print("numero1 e igual ao numero2")
 
-SE ENTÂO (expressão booleana)
-elif                          elif numero1 > numero2:
-                                print("numero1 e maior que o numero2")
-                    
-SENÂO
-else                          else:
-                                print("numero1 e menor que o numero2")
+# if - SE (expressão booleana)
+if numero1 > numero2:
+  print("numero1 e maior que o numero2")
 
 
+# elif - SE ENTÂO (expressão booleana)
+elif numero1 < numero2:
+  print("numero1 e menor que o numero2")
+
+
+# else - SENÂO
+else:
+  print("numero1 e igual ao numero2")
+
+
+# exemplo:
 if numero1 == numero2:
   print("numero1 e igual ao numero2")
 else:
   print("numero1 e diferente do numero2")
-                                
+
 
 
 # loops
-PARA (cada elemento
-for                           for i in range(0, 10):
-                                print(i)
 
-ENQUANTO
-while                         i = 0
-                              while i < 10:
-                                print(i)
-                                i += 1
+# for - PARA - para cada elemento, faça
+
+for i in range(0, 10):
+  print(i)
+
+# iterando em uma lista
+lista_a = [1, 2, 3, 4]
+for elemento in lista_a:
+  print(elemento)
+
+# iterando em um conjunto - set
+for elemento in {1, 2, 3, 4}:
+  print(elemento)
+
+
+
+# while - ENQUANTO - enquanto uma expressão for atendida, faça algo
+
+i = 0
+while i < 10:
+  print(i)
+  i += 1
+
+
 
 # controle de fluxo
-INTERROMPER
-break
-                              for i in range(0, 10):
-                                if i == 5:
-                                  break
-                                else:
-                                  print(i)
 
-CONTINUAR
-continue
-                              for i in range(0, 10):
-                                if i == 5:
-                                  continue
-                                else:
-                                  print(i)
+# break - INTERROMPER - (só pode ser usado em loop)
 
-AVANÇAR
-pass
-                              for i in range(0, 10):
-                                if i == 5:
-                                  pass
-                                else:
-                                  print(i)
+for i in range(0, 10):
+  if i == 5:
+    break
+  else:
+    print(i)
+                              
+from time import sleep
+segundos_decorridos = 0
+while True:
+  sleep(1)
+  segundos_decorridos = segundos_decorridos + 1
+  print("segundos_decorridos", segundos_decorridos)
+  if segundos_decorridos >= 4:
+    break
 
 
+
+# continue - CONTINUAR - só pode ser usado em loop
+
+for i in range(0, 10):
+  if i == 5:
+    continue
+  else:
+    print(i)
+
+
+
+# pass - AVANÇAR - ignorar alguma condição
+
+for i in range(0, 10):
+  if i % 2 != 0:
+    pass
+  else:
+    print(i)
+
+if numero1 == numero2:
+  pass # apenas ignora esse caso
 
 
 
