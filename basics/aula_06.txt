@@ -56,6 +56,19 @@ print(person1 != person2)
 
 
 
+# try
+# except
+# raise
+# finally
+
+# assert
+
+# return
+# yield
+
+# with
+
+# del
 
 
 

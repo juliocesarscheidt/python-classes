@@ -1,89 +1,85 @@
-def check_memory_addr(variable: object):
-    print(id(variable))
-
-
 # these variables will point to the same address
 var_a = 10
+
+# this copies the value from one variable to another
 var_b = var_a
 
-check_memory_addr(var_a)
-# example: 10914784
-check_memory_addr(var_b)
-# example: 10914784
+# the references are the same initially
+print(id(var_a))
+# example: 140708955608384
+print(id(var_b))
+# example: 140708955608384
+
+print(var_a)
+# 10
+print(var_b)
+# 10
 
 # however, changing one will not reflect
 # on the other one, because primitive types
 # are handled by value
 # instead they change their memory address
 var_a = 30
-check_memory_addr(var_a)
-# example: 10915424
-check_memory_addr(var_b)
-# example: 10914784
 
-print('var_a', var_a)
-# var_a 30
-print('var_b', var_b)
-# var_b 10
-var_b = 20
-print('var_a', var_a)
-# var_a 30
-print('var_b', var_b)
-# var_b 20
+# the references are already different
+print(id(var_a))
+# example: 140708955609024
+print(id(var_b))
+# example: 140708955608384
+
+print(var_a)
+# 30
+print(var_b)
+# 10
+
+def change_primitive_value(var):
+  print("variable BEFORE change", var)
+  var = 10000
+  print("variable AFTER change", var)
+
+change_primitive_value(var_a)
+# variable BEFORE change 30
+# variable AFTER change 10000
+
+print(var_a)
+# 30
+
 
 print("##########################")
 
 
-def change_primitive_value(variable: object):
-    print('variable before', variable)
-    variable = None
-    print('variable after', variable)
+list_a = [0, 1, 2, 3, 4, 5, 6]
+print(list_a)
+# [0, 1, 2, 3, 4, 5, 6]
 
+# this copies the reference from one variable to another
+list_b = list_a
 
-var_c = 100
-print('var_c', var_c)
-# var_c 100
-change_primitive_value(var_c)
-# variable before 100
-# variable after None
-print('var_c', var_c)  # var_c will be still 100
-# var_c 100
+print(list_b)
+# [0, 1, 2, 3, 4, 5, 6]
 
-print("##########################")
+# the references are the same
+print(id(list_a))
+# example: 1854078226568
+print(id(list_b))
+# example: 1854078226568
 
+def change_complex_value(var):
+    print("variable BEFORE change", var)
+    var[0] = 10000
+    print("variable AFTER change", var)
 
-def change_complex_value(variable: object):
-    print('variable complex before', variable)
-    variable[0] = None
-    print('variable complex after', variable)
+change_complex_value(list_a)
+# variable BEFORE change [0, 1, 2, 3, 4, 5, 6]
+# variable AFTER change [10000, 1, 2, 3, 4, 5, 6]
 
+print(list_a)
+# [10000, 1, 2, 3, 4, 5, 6]
+print(list_b)
+# [10000, 1, 2, 3, 4, 5, 6]
 
-var_d = [0, 1, 2, 3, 4, 5, 6]
-print('var_d', var_d)
-# var_d [0, 1, 2, 3, 4, 5, 6]
-var_e = var_d
-print('var_e', var_e)
-# var_e [0, 1, 2, 3, 4, 5, 6]
-
-change_complex_value(var_d)
-# variable complex before [0, 1, 2, 3, 4, 5, 6]
-# variable complex after [None, 1, 2, 3, 4, 5, 6]
-print('var_d', var_d)
-# var_d [None, 1, 2, 3, 4, 5, 6]
-print('var_e', var_e)
-# var_e [None, 1, 2, 3, 4, 5, 6]
-
-check_memory_addr(var_d[0])
-# 10306432
-check_memory_addr(var_e[0])
-# 10306432
-check_memory_addr(var_d)
-# example: 140687739825672
-check_memory_addr(var_e)
-# example: 140687739825672
-
-var_e[1] = None
-print('var_e', var_e)
-# var_e [None, None, 2, 3, 4, 5, 6]
-print('var_d', var_d)
-# var_d [None, None, 2, 3, 4, 5, 6]
+# the references are still the same
+print(id(list_a))
+# example: 1854078226568
+print(id(list_b))
+# example: 1854078226568
