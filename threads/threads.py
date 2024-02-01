@@ -20,8 +20,9 @@ if __name__ == "__main__":
     start = time()
 
     threads = []
-    threads.append(Thread(target=func, args=["THREAD FUNCTION 1", 2]))
-    threads.append(Thread(target=func, args=["THREAD FUNCTION 2", 4]))
+    sleep_time = 2 # 2 seconds
+    threads.append(Thread(target=func, args=["THREAD FUNCTION 1", sleep_time]))
+    threads.append(Thread(target=func, args=["THREAD FUNCTION 2", sleep_time]))
 
     for t in threads:
         t.start()
@@ -36,13 +37,12 @@ if __name__ == "__main__":
 # __main__ thread 139758585370432
 
 # START THREAD FUNCTION 1
-# THREAD FUNCTION 1 thread 139758561576704
-
 # START THREAD FUNCTION 2
-# THREAD FUNCTION 2 thread 139758553184000
 
-# FINISH THREAD FUNCTION 1
+# THREAD FUNCTION 1 thread 3688
+# THREAD FUNCTION 2 thread 17644
 
 # FINISH THREAD FUNCTION 2
+# FINISH THREAD FUNCTION 1
 
 # Total duration of 4.006764650344849 secs

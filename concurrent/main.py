@@ -10,7 +10,7 @@ def get_wiki_page_existence(wiki_page_url, timeout=10):
   elif response.status_code == 404:
       page_status = "NOT_FOUND"
   
-  print(response.text[0:20])
+  print(response.text[0:10])
 
   return wiki_page_url + " - " + page_status
 
