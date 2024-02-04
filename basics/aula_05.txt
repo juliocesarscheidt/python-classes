@@ -7,9 +7,9 @@ name = input("Digite seu nome:")
 print("name", name)
 
 if name.startswith("j") or name.startswith("J"):
-  print(f"O nome {name} começa com J")
+  print(f"O nome {name} comeÃ§a com J")
 else:
-  print(f"O nome {name} NÃO começa com J")
+  print(f"O nome {name} NÃƒO comeÃ§a com J")
 
 # executar
 python script.py
@@ -17,10 +17,10 @@ python script.py
 
 
 
-# funções
-def => definir função
+# funcoes
+def => definir funcao
 
-# docstring - serve para documentar funções
+# docstring - serve para documentar funcoes
 """
 Input: no input
 Returns a static string
@@ -32,6 +32,8 @@ print(type(funcao))
 # <class 'function'>
 print(funcao())
 # "Hello World"
+
+
 
 
 def dizer_ola(nome: str, idade: int):
@@ -46,11 +48,13 @@ dizer_ola(nome="julio", idade=50)
 
 
 
+
 def calcular_ano_bissexto(ano: int):
-  # ano é bissexto se dividido por 4 o resto for 0
+  # ano Ã© bissexto se dividido por 4 o resto for 0
   return ano % 4 == 0
 
 print(calcular_ano_bissexto(2024))
+
 
 
 
@@ -62,26 +66,6 @@ print(sqrt(4))
 
 # square root         16 ** (1/2) = 4
 print(4 ** (1/2))
-
-
-
-
-# error handling
-try:
-  print(10 / 0)
-except ZeroDivisionError as e:
-  print("Ocorreu um erro aqui =>", e)
-finally:
-  print("Vai cair aqui de qualquer jeito")
-
-
-
-
-
-
-
-
-
 
 
 

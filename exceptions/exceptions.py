@@ -1,33 +1,39 @@
 import traceback
 
+# error handling
+try:
+  print(10 / 0)
+except ZeroDivisionError as e:
+  print("Ocorreu um erro aqui =>", e)
+  traceback.print_exc()
+finally:
+  print("Vai cair aqui de qualquer jeito")
 
+# Ocorreu um erro aqui => division by zero
+"""
+Traceback (most recent call last):
+  File "exceptions.py", line 6, in <module>
+    print(10 / 0)
+ZeroDivisionError: division by zero
+"""
+# Vai cair aqui de qualquer jeito
+
+print()
+
+# definindo uma excecao customizada, extendendo da classe Exception
 class CustomException(Exception):
-    def __init__(self, message: str):
-        super().__init__(message)
+  def __init__(self, message: str):
+    super().__init__(message)
 
-
-def func():
-    raise CustomException("Custom Exception Message")
-
+# definindo uma funcao que ira lancar um erro customizado (raise)
+def func1():
+  raise CustomException("The custom exception happened here")
 
 try:
-    func()
+  func1()
 except CustomException as e:
-    print("Custom Exception captured")
-    print(e)
+  print("Custom exception captured:", e)
 except Exception as e:
-    print("Generic Exception captured")
-    print(e)
-# Custom Exception captured
-# Custom Exception Message
+  print("Generic exception captured:", e)
 
-try:
-    print(1 / 0)
-except Exception as e:
-    print(e)
-    traceback.print_exc()
-# division by zero
-# Traceback (most recent call last):
-#   File "exceptions.py", line 22, in <module>
-#     print(1/0)
-# ZeroDivisionError: division by zero
+# Custom exception captured: The custom exception happened here

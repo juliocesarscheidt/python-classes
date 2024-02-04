@@ -14,18 +14,24 @@
 class Person(object):
   name: str
   def __init__(self, name: str) -> None:
+    print('__init__ called')
     self.name = name
+
   def __eq__(self, other: object) -> bool:
     print('__eq__ called')
     if isinstance(other, Person):
       if other.name == self.name:
         return True
     return False
+
   def __ne__(self, other: object) -> bool:
     print('__ne__ called')
     return not self.__eq__(other)
+
   def __str__(self) -> str:
+    print('__str__ called')
     return f"Person {self.name}"
+
   def get_name(self):
     return self.name
 
@@ -58,25 +64,4 @@ print(person1 != person2)
 # __ne__ called
 # __eq__ called
 # False
-
-
-
-
-# try
-# except
-# raise
-# finally
-
-# assert
-
-# return
-# yield
-
-# with
-
-# del
-
-
-
-
 
