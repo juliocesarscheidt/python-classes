@@ -22,7 +22,7 @@ python script.py
 
 ## Funções
 
-def => Definir função
+def - Definir uma função
 
 ```python
 def funcao() -> str:
