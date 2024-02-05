@@ -1,26 +1,5 @@
 # fun��o para calcular tempo com base na distancia e velocidade media
 # tempo = distancia / velocidade media
-
-class Person(object):
-  name: str
-  def __init__(self, name: str) -> None:
-    self.name = name
-  def __eq__(self, other: object) -> bool:
-    print('__eq__ called')
-    if isinstance(other, Person):
-      if other.name == self.name:
-        return True
-    return False
-  def __ne__(self, other: object) -> bool:
-    print('__ne__ called')
-    return not self.__eq__(other)
-  def __str__(self) -> str:
-    return f"Person {self.name}"
-  def get_name(self):
-    return self.name
-
-
-
 def calcula_tempo_entre(distancia, velocidade_media):
   tempo_em_horas = distancia / velocidade_media
   tempo_em_minutos = tempo_em_horas * 60
