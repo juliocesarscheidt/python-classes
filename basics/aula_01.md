@@ -1,5 +1,3 @@
-
-
 # Linguagens de Programação
 
 Uma linguagem de programação é um conjunto de instruções escritas de forma padronizada, agindo como intermediário entre o programador humano e a máquina/computador.
@@ -7,7 +5,8 @@ Uma linguagem de programação é um conjunto de instruções escritas de forma 
 Algoritmos funcionam como "receitas de bolo", onde são descritos o passo a passo que a máquina deve executar.
 
 
-# computador entende binario
+## Computador entende binario
+
 0         0000
 1         0001
 2         0010
@@ -21,7 +20,8 @@ Algoritmos funcionam como "receitas de bolo", onde são descritos o passo a pass
 
 
 
-# linguagens interpretadas
+## Linguagens interpretadas
+
   Linguagem interpretada é uma linguagem de programação em que o código fonte
   é executado por um programa de computador chamado interpretador (ao invés de serem compiladas),
   onde a interpretação e a execução do programa acontecem em tempo real e independente do sistema operacional utilizado.
@@ -30,7 +30,8 @@ Algoritmos funcionam como "receitas de bolo", onde são descritos o passo a pass
 
   Exemplos: javascript, python, php, ruby, shellscript
 
-# linguagens compiladas
+## Linguagens compiladas
+
   Linguagem compilada é uma linguagem de programação em que o código fonte, nessa linguagem,
   é executado diretamente pelo sistema operacional ou pelo processador (ou alguma máquina virtual, ex. JVM do Java),
   após ser traduzido por meio de um processo chamado compilação, usando um programa de computador chamado compilador,
@@ -40,7 +41,8 @@ Algoritmos funcionam como "receitas de bolo", onde são descritos o passo a pass
 
 
 
-# paradigmas
+## Paradigmas
+
 Procedural/imperativa
   Organiza o programa como uma sequência de procedimentos ou rotinas.
   Exemplos: fortran, c
@@ -63,7 +65,8 @@ Existem outras além destas, como Orientada a Aspectos, Baseado em Restrições.
 
 
 
-# base das linguagens
+## Base das linguagens
+
 variaveis
   sao armazenadas em memória, e então recuperadas quando acessadas
   possuem endereço na memória
@@ -74,7 +77,8 @@ funções/metodos - procedimentos
 
 
 
-# sintaxe
+## Sintaxe
+
 Regras que definem a estrutura gramatical dos elementos em um código fonte.
 
 Estabelece como as instruções devem ser escritas para que o compilador ou interpretador da linguagem possa compreendê-las e executá-las corretamente.
@@ -86,11 +90,8 @@ Exemplos:
 
   indentação: necessário uso de indentação com "tab" em algumas linguagem
 
-  comentários:
-    # ...
-    // ...
-    /* ... */
-
-
-
+  comentários:  
+    # ...  
+    // ...  
+    /* ... */  
 

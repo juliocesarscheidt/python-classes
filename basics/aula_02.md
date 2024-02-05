@@ -1,31 +1,30 @@
-
-
 # Tipagem
 
-As tipagens referem-se ‡ maneira como os tipos de dados s„o tratados em uma linguagem de programaÁ„o
+As tipagens referem-se √† maneira como os tipos de dados s√£o tratados em uma linguagem de programa√ß√£o
 
 Define como os valores podem ser usados e manipulados em um programa
 
 
-# Tipagem Est·tica:
-  Os tipos das vari·veis s„o conhecidos em tempo de compilaÁ„o,
-  e mudanÁas entre os tipos (conversıes/ coerÁ„o de tipo/ casts) devem ser explicitas
+## Tipagem Est√°tica
+
+  Os tipos das vari√°veis s√£o conhecidos em tempo de compila√ß√£o,
+  e mudan√ßas entre os tipos (convers√µes/ coer√ß√£o de tipo/ casts) devem ser explicitas
 
   Exemplos: java, csharp, c, golang
   
-# Tipagem Din‚mica:
-  O tipo da vari·vel È determinado em tempo de execuÁ„o pelo interpretador,
-  e pode haver mudanÁa do tipo da variavel durante o programa
+## Tipagem Din√¢mica
+
+  O tipo da vari√°vel √© determinado em tempo de execu√ß√£o pelo interpretador,
+  e pode haver mudan√ßa do tipo da variavel durante o programa
   
   Exemplos: python, javascript, php
 
 
+## Iniciando com Python
 
+### Tipos primitivos
 
-# iniciando com Python!
-
-# tipos primitivos
-
+```python
 # string
 nome = "julio"
 print(nome)
@@ -46,12 +45,14 @@ print(type(flutuante))
 # bool
 booleano = True
 print(type(booleano))
+```
 
 
+### Tipos complexos
 
-# tipos complexos
+#### lista/vetor - lista ordenada de elementos
 
-# lista/vetor - lista ordenada de elementos
+```python
 # lista = [1, 2]
 lista = list([1, 2])
 print(lista)
@@ -71,9 +72,12 @@ lista.pop() # remove o ultimo elemento e o retorna
 # 3
 print(lista)
 # [2]
+```
 
 
-# dicionario/mapa - armazena chave e valor
+#### Dicionario/mapa - armazena chave e valor
+
+```python
 dicionario = {"chave_1": "valor_1"}
 # dicionario = dict({"chave_1": "valor_1"})
 print(dicionario)
@@ -82,9 +86,12 @@ dicionario["chave_2"] = "valor_2" # adiciona chave-valor ao dicionario
 # dicionario.update({"chave_2": "valor_2"})
 del dicionario["chave_1"] # deleta chave do dicionario
 print(type(dicionario))
+```
 
 
-# conjunto - armazena valores unicos, inordenado
+#### Conjunto - armazena valores unicos, inordenado
+
+```python
 conjunto = {'a', 'b', 'c'}
 # conjunto = set({'a', 'b', 'c'})
 print(conjunto)
@@ -92,9 +99,12 @@ print(conjunto)
 conjunto.add('d')
 conjunto.remove('b')
 'b' in conjunto
+```
 
 
-# tupla - imutavel, nao pode ser alterada
+#### Tupla - imutavel, nao pode ser alterada
+
+```python
 # tupla_simples = 0, 1, 2
 tupla_simples = (0, 1, 2)
 # tupla_simples = tuple((0, 1, 2))
@@ -108,16 +118,4 @@ tupla_simples[0] = 3
 tupla_um_elemento = (0,)
 print(tupla_um_elemento)
 print(type(tupla_um_elemento))
-
-
-
-
-
-
-
-
-
-
-
-
-
+```
