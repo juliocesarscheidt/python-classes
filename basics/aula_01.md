@@ -7,6 +7,7 @@ Algoritmos funcionam como "receitas de bolo", onde são descritos o passo a pass
 
 ## Computador entende binario
 
+```text
 0         0000  
 1         0001  
 2         0010  
@@ -17,7 +18,7 @@ Algoritmos funcionam como "receitas de bolo", onde são descritos o passo a pass
 7         0111  
 8         1000  
 ...
-
+```
 
 
 ## Linguagens interpretadas
