@@ -44,21 +44,21 @@ Algoritmos funcionam como "receitas de bolo", onde são descritos o passo a pass
 
 ## Paradigmas
 
-Procedural/imperativa
+- Procedural/imperativa  
   Organiza o programa como uma sequência de procedimentos ou rotinas.
   Exemplos: fortran, c
 
-Orientado a objetos OO - programação orientada a objetos POO
+- Orientado a objetos OO - programação orientada a objetos POO  
   Modela o programa em termos de objetos, que são instâncias de classes que encapsulam dados/atributos e comportamentos/metodos
   Exemplos: csharp, java, c++, typescript
   Outras linguagens como python, php, javascript, incorporam alguns conceitos da POO
 
-Funcional
+- Funcional  
   Baseia-se no conceito de funções matemáticas, evitando estados mutáveis e dados globais.
   Exemplos: haskell, lisp, scala
   Outras linguagens incorporam conceitos funcionais, como javascript, python, e até java nas versões mais atuais
 
-Orientado a Eventos
+- Orientado a Eventos  
   O programa responde a eventos gerados pelo sistema ou usuário
   Exemplos: javascript, visual basic
 
@@ -68,12 +68,12 @@ Existem outras além destas, como Orientada a Aspectos, Baseado em Restrições.
 
 ## Base das linguagens
 
-variaveis
+- variaveis
   sao armazenadas em memória, e então recuperadas quando acessadas
   possuem endereço na memória
   - algumas linguagens possuem também constantes
 
-funções/metodos - procedimentos
+- funções/metodos - procedimentos
   encapsulam lógicas, trechos, sequencias de instruções em algo que pode ser reutilizado posteriormente
 
 
@@ -84,15 +84,18 @@ Regras que definem a estrutura gramatical dos elementos em um código fonte.
 
 Estabelece como as instruções devem ser escritas para que o compilador ou interpretador da linguagem possa compreendê-las e executá-las corretamente.
 
-Exemplos:
-  palavras-chave: if, else, for, while, ...
+> Exemplos:
 
-  delimitadores: delimitam os trechos de código, exemplo ";" "{" "}"
+- palavras-chave: if, else, for, while, ...
 
-  indentação: necessário uso de indentação com "tab" em algumas linguagem
+- delimitadores: delimitam os trechos de código, exemplo ";" "{" "}"
 
-  comentários:  
+- indentação: necessário uso de indentação com "tab" em algumas linguagem
+
+- comentários:
+
+```text
     # ...  
     // ...  
     /* ... */  
-
+```
