@@ -59,6 +59,7 @@ def calcular_ano_bissexto(ano: int):
 print(calcular_ano_bissexto(2024))
 # True
 
+# usando unpacking
 ano_dict = {"ano": 2025}
 print(calcular_ano_bissexto(**ano_dict))
 # False

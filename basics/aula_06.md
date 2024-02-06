@@ -39,6 +39,7 @@ class Pessoa():
 pessoa1 = Pessoa("Julio")
 pessoa2 = Pessoa("Julio")
 
+# usando unpacking
 pessoa_dict = {"nome": "Julio"}
 pessoa3 = Pessoa(**pessoa_dict)
 print(pessoa3)
