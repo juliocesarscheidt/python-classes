@@ -1,8 +1,8 @@
 
 ## args e kwargs
 
-# argumentos nao nomeados *args
-# argumentos nomeados **kwargs
+- argumentos nao nomeados *args  
+- argumentos nomeados **kwargs
 
 ```python
 def func1(*args):
