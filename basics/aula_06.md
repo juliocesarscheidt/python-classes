@@ -1,73 +1,62 @@
 
-## Classes - OO
+## args e kwargs
 
-### "class" é uma palavra reservada para definir uma classe
-
-> operadores de igualdade
-
-  "==" compara valores  
-  "is" compara referencias
-
+# argumentos nao nomeados *args
+# argumentos nomeados **kwargs
 
 ```python
-# classes extendem por padrao a classe object no Python
-# class Pessoa(object):
-class Pessoa():
-  # propriedades
-  nome: str
-  # construtor
-  def __init__(self, nome: str) -> None:
-    print('__init__ called')
-    self.nome = nome
-  def __eq__(self, other: object) -> bool:
-    print('__eq__ called')
-    if isinstance(other, Pessoa):
-      if other.nome == self.nome:
-        return True
-    return False
-  def __ne__(self, other: object) -> bool:
-    print('__ne__ called')
-    return not self.__eq__(other)
-  def __str__(self) -> str:
-    print('__str__ called')
-    return f"Pessoa {self.nome}"
-  # getter
-  def get_nome(self):
-    return self.nome
+def func1(*args):
+    for arg in args:
+        print(arg)
+
+func1("Python", "Javascript", "Golang")
+# Python
+# Javascript
+# Golang
+
+# nao funciona
+# func1(a="Python", b="Javascript", c="Golang")
+```
+
+```python
+def func2(**kwargs):
+    print(f"argumentos: {kwargs}")
+    print(kwargs.keys())
+    for arg in kwargs.values():
+        print(arg)
+
+func2(a="Python", b="Javascript", c="Golang")
+# argumentos: {'a': 'Python', 'b': 'Javascript', 'c': 'Golang'}
+# dict_keys(['a', 'b', 'c'])
+# Python
+# Javascript
+# Golang
+```
 
 
-pessoa1 = Pessoa("Julio")
-pessoa2 = Pessoa("Julio")
+## Módulos
 
-# usando unpacking
-pessoa_dict = {"nome": "Julio"}
-pessoa3 = Pessoa(**pessoa_dict)
-print(pessoa3)
+```python
+from internal_module.script import calcular_ano_bissexto
 
-
-print(pessoa1.get_nome())
-# Julio
-
-print(pessoa1)
-# Pessoa Julio
-
-print(id(pessoa1)) # returns object memory address
-# 140228566496536
-
-print(id(pessoa2)) # returns object memory address
-# 140514192487928
-
-print(pessoa1 is pessoa2)
-# False
-
-# == calls __eq__ method
-print(pessoa1 == pessoa2)
-# __eq__ called
+print(calcular_ano_bissexto(2024))
 # True
+```
 
-# != calls __ne__ method
-print(pessoa1 != pessoa2)
-# __ne__ called
-# __eq__ called
-# False
+
+## Pacotes
+
+pip - package manager do Python, usado para instalar pacotes
+
+Pacote math já vem por padrão na instalação do Python
+
+```python
+from math import sqrt # importa uma função específica
+# import math # importa o pacote inteiro/todos os modulos
+# from math import sqrt as square_root # importação com alias
+
+print(sqrt(4))
+# 2.0
+# print(math.sqrt(16))
+# print(square_root(16))
 ```

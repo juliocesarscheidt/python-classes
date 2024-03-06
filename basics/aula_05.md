@@ -7,10 +7,10 @@ script.py
 name = input("Digite seu nome:")
 print("name", name)
 
-if name.startswith("j") or name.startswith("J"):
-  print(f"O nome {name} começa com J")
+if name.lower().startswith("a"):
+  print(f"O nome {name} começa com a")
 else:
-  print(f"O nome {name} NÃO começa com J")
+  print(f"O nome {name} NÃO começa com a")
 ```
 
 > Executar
@@ -30,6 +30,7 @@ def funcao() -> str:
 
 print(type(funcao))
 # <class 'function'>
+
 print(funcao())
 # "Hello World"
 ```
@@ -38,13 +39,20 @@ print(funcao())
 Função com argumentos
 
 ```python
-def dizer_ola(nome: str, idade: int):
-  print("ola pessoa " + nome + " de idade " + str(idade))
-  print("ola pessoa {} de idade {}".format(nome, idade))
-  print("ola pessoa %s de idade %d" % (nome, idade))
-  print(f"ola pessoa {nome} de idade {idade}")
+def dizer_ola(nome: str, idade: int) -> None:
+  print("ola pessoa " + nome + " de idade " + str(idade)) # concatenação
 
+  print("ola pessoa {} de idade {}".format(nome, idade)) # format - template
+
+  # %d int | %f float | %s string | %x hexadecimal | etc
+  print("ola pessoa %s de idade %d" % (nome, idade)) # especificação de formato - template
+  print("ola pessoa %(nome)s de idade %(idade)d" % {"nome": nome, "idade": idade}) # especificação de formato - template
+
+  print(f"ola pessoa {nome} de idade {idade}") # template - string interpolation - Python 3.6+
+
+# invocação regular
 dizer_ola("julio", 50)
+
 # usando argumentos nomeados
 dizer_ola(nome="julio", idade=50)
 # dizer_ola(idade=50, nome="julio")
@@ -52,7 +60,7 @@ dizer_ola(nome="julio", idade=50)
 
 
 ```python
-def calcular_ano_bissexto(ano: int):
+def calcular_ano_bissexto(ano: int) -> bool:
   # ano é bissexto se dividido por 4 o resto for 0
   return ano % 4 == 0
 
@@ -63,22 +71,10 @@ print(calcular_ano_bissexto(2024))
 ano_dict = {"ano": 2025}
 print(calcular_ano_bissexto(**ano_dict))
 # False
-```
 
-
-## Módulos
-
-```python
-# modulos
-from math import sqrt
-# import math
-# from math import sqrt as square_root
-
-print(sqrt(4))
-# 2.0
-# print(square_root(16))
-# print(math.sqrt(16))
-
-# square root         16 ** (1/2) = 4
-print(4 ** (1/2))
+# com valor padrão
+def calcular_ano_bissexto_com_valor_padrao(ano: int = 2024) -> bool:
+  return ano % 4 == 0
+print(calcular_ano_bissexto())
+# True
 ```

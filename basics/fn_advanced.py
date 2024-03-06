@@ -1,4 +1,4 @@
-# fun��o para calcular tempo com base na distancia e velocidade media
+# função para calcular tempo com base na distancia e velocidade media
 # tempo = distancia / velocidade media
 def calcula_tempo_entre(distancia, velocidade_media):
   tempo_em_horas = distancia / velocidade_media
