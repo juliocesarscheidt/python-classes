@@ -6,10 +6,12 @@
 
 ```python
 def func1(*args):
-    for arg in args:
-        print(arg)
+  print(type(args))
+  for arg in args:
+    print(arg)
 
 func1("Python", "Javascript", "Golang")
+# <class 'tuple'>
 # Python
 # Javascript
 # Golang
@@ -20,14 +22,16 @@ func1("Python", "Javascript", "Golang")
 
 ```python
 def func2(**kwargs):
-    print(f"argumentos: {kwargs}")
-    print(kwargs.keys())
-    for arg in kwargs.values():
-        print(arg)
+  print(f"argumentos: {kwargs}")
+  print(type(kwargs))
+  print(list(kwargs.keys()))
+  for key in kwargs.keys():
+    print(kwargs[key])
 
 func2(a="Python", b="Javascript", c="Golang")
 # argumentos: {'a': 'Python', 'b': 'Javascript', 'c': 'Golang'}
-# dict_keys(['a', 'b', 'c'])
+# <class 'dict'>
+# ['a', 'b', 'c']
 # Python
 # Javascript
 # Golang
