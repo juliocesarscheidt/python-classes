@@ -71,9 +71,13 @@ print(calcular_ano_bissexto(**ano_dict))
 ```python
 # modulos
 from math import sqrt
+# import math
+# from math import sqrt as square_root
 
 print(sqrt(4))
 # 2.0
+# print(square_root(16))
+# print(math.sqrt(16))
 
 # square root         16 ** (1/2) = 4
 print(4 ** (1/2))
