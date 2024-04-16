@@ -1,8 +1,12 @@
+# import time
 import requests
 import concurrent.futures
+from threading import current_thread
 
 def get_wiki_page_existence(wiki_page_url, timeout=10):
   response = requests.get(url=wiki_page_url, timeout=timeout)
+  print('thread id', current_thread().ident)
+  # time.sleep(10)
 
   page_status = "UNKNOWN"
   if response.status_code == 200:
