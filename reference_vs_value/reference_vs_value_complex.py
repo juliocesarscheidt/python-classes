@@ -1,3 +1,11 @@
+import ctypes
+import gc
+
+def check_refs(address):
+  ref_count = ctypes.c_long.from_address(address).value
+  print(f"Reference count for address is: {ref_count}")
+
+
 list_a = [0, 1, 2, 3, 4, 5, 6]
 print(list_a)
 # [0, 1, 2, 3, 4, 5, 6]

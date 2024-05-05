@@ -1,3 +1,11 @@
+class MyListFromHeritage(list):
+  pass
+
+lista0 = MyListFromHeritage([1, 2, 3, 4])
+print(lista0)
+# [1, 2, 3, 4]
+
+
 class MyList():
   # propriedades
   lista = []
