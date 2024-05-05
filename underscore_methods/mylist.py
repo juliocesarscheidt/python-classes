@@ -1,10 +1,11 @@
 class MyListFromHeritage(list):
   pass
 
-lista0 = MyListFromHeritage([1, 2, 3, 4])
-print(lista0)
+lista1 = MyListFromHeritage([1, 2, 3, 4])
+print(lista1)
 # [1, 2, 3, 4]
 
+print('-----------------')
 
 class MyList():
   # propriedades
@@ -29,19 +30,19 @@ class MyList():
     return f"{self.lista}"
 
 
-lista1 = MyList([1, 2, 3, 4])
+lista2 = MyList([1, 2, 3, 4])
 # __init__ called
 
-print(lista1)
+print(lista2)
 # default: <__main__.MyList object at 0x00000122585049E8>
 
 # __str__ called
 # [1, 2, 3, 4]
 
-print([i % 2 == 0 for i in lista1])
+print([i % 2 == 0 for i in lista2])
 # [False, True, False, True]
 
-for i in lista1:
+for i in lista2:
   print(i)
 """
 __iter__ called
@@ -53,14 +54,14 @@ __iter__ called
 
 print('-----------------')
 
-lista2 = list([1, 2, 3, 4])
-print(lista2)
+lista3 = list([1, 2, 3, 4])
+print(lista3)
 # [1, 2, 3, 4]
 
-print([i % 2 == 0 for i in lista2])
+print([i % 2 == 0 for i in lista3])
 # [False, True, False, True]
 
-for i in lista2:
+for i in lista3:
   print(i)
 """
 1

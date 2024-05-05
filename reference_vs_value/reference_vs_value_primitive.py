@@ -10,10 +10,12 @@ print(id(var_a))
 print(id(var_b))
 # example: 140708955608384
 
+
 print(var_a)
 # 10
 print(var_b)
 # 10
+
 
 # however, changing one will not reflect
 # on the other one, because primitive types
@@ -31,6 +33,7 @@ print(var_a)
 # 30
 print(var_b)
 # 10
+
 
 def change_primitive_value(var):
   print("variable BEFORE change", var)
