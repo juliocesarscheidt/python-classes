@@ -44,7 +44,8 @@ class FixedWindow:
       self.current_window[1] += self.window_size
 
       if self.capacity > 0:
-        # o contador de pacotes vira 1, pois iremos aceitar este primeiro pacote na janela nova
+        # o contador de pacotes aceitos vira 1,
+        # pois iremos aceitar este primeiro pacote na nova janela
         self.allowed_within_window = 1
         return self.forward_callback(packet)
       else:
