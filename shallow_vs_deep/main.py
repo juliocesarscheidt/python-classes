@@ -26,16 +26,26 @@ lista_shallow_copy = copy.copy(lista)
 # deep copy
 lista_deep_copy = copy.deepcopy(lista)
 
+# listas criadas com slice [:] funcionam igual ao shallow copy
+lista_slice = lista[:]
 
+
+print('')
 print(id(lista_deep_copy))
-# 1952934355912           endereco de memoria muda no shallow e deep copy, pois nao e uma referencia ao objeto em si
+# 1952934355912           endereco de memoria muda no shallow e deep copy, pois nao e uma referencia ao objeto original em si
 print(lista_shallow_copy)
 # [Pessoa=[Pessoa 1], Pessoa=[Pessoa 2], Pessoa=[Pessoa 3], Pessoa=[Pessoa 4]]
 
 
+print('')
 print(id(lista_deep_copy))
 # 1952934355912
 print(lista_deep_copy)
+# [Pessoa=[Pessoa 1], Pessoa=[Pessoa 2], Pessoa=[Pessoa 3], Pessoa=[Pessoa 4]]
+
+
+print('')
+print(lista_slice)
 # [Pessoa=[Pessoa 1], Pessoa=[Pessoa 2], Pessoa=[Pessoa 3], Pessoa=[Pessoa 4]]
 
 
@@ -73,3 +83,6 @@ print(lista_shallow_copy)
 
 print(lista_deep_copy)
 # [Pessoa=[Pessoa 1], Pessoa=[Pessoa 2], Pessoa=[Pessoa 3], Pessoa=[Pessoa 4]]
+
+print(lista_slice)
+# [Pessoa=[Pessoa 1000], Pessoa=[Pessoa 2], Pessoa=[Pessoa 3], Pessoa=[Pessoa 4]]
