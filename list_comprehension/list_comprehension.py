@@ -1,5 +1,6 @@
 numbers = [1, 2, 3, 4, 5, 6]
 
+# filter
 evens = [x for x in numbers if x % 2 == 0]
 print(evens)
 # [2, 4, 6]
@@ -11,6 +12,11 @@ print(odds)
 print([x for x in numbers if x < 4])
 # [1, 2, 3]
 
+# map
+print([{'idx': idx, 'value': x} for [idx, x] in enumerate(numbers)])
+# [{'idx': 0, 'value': 1}, {'idx': 1, 'value': 2}, {'idx': 2, 'value': 3}, {'idx': 3, 'value': 4}, {'idx': 4, 'value': 5}, {'idx': 5, 'value': 6}]
+
+# with objects
 list_objects = [{"id": i, "name": "object_" + str(i), }
                 for i in range(4)]
 
