@@ -32,8 +32,14 @@ class Pessoa():
       yield letter
 
   # getter
-  def get_nome(self):
-    return self.nome
+  @property
+  def nome(self):
+    return self._nome
+
+  # setter
+  @nome.setter
+  def nome(self, value):
+    self._nome = value  # getter
 
 
 pessoa1 = Pessoa("Julio")
