@@ -20,7 +20,7 @@ class MyList():
     print('__iter__ called')
     for element in self.lista:
       yield element
-  
+
   def __str__(self) -> str:
     print('__str__ called')
     return f"{self.lista}"
@@ -30,6 +30,7 @@ class MyList():
     return f"{self.lista}"
 
 
+# lista2 = list([1, 2, 3, 4])
 lista2 = MyList([1, 2, 3, 4])
 # __init__ called
 

@@ -32,8 +32,13 @@ class Pessoa():
     print('__str__ called')
     return f"Pessoa {self.nome}"
   # getter
-  def get_nome(self):
-    return self.nome
+  @property
+  def nome(self):
+    return self._nome
+  # setter
+  @nome.setter
+  def nome(self, value):
+    self._nome = value
 
 
 pessoa1 = Pessoa("Julio")
@@ -45,7 +50,7 @@ pessoa3 = Pessoa(**pessoa_dict)
 print(pessoa3)
 
 
-print(pessoa1.get_nome())
+print(pessoa1.nome)
 # Julio
 
 print(pessoa1)
