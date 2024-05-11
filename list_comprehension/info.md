@@ -1,4 +1,4 @@
-# list comprehension
+# List comprehension
 
 List comprehension oferece uma sintaxe mais curta quando você deseja criar uma nova lista com base nos valores de uma lista existente
 
