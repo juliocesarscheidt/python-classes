@@ -9,4 +9,6 @@ https://peps.python.org/pep-0202/
 
 Segue uma forma de notação de definição de conjuntos matemáticos
 
+![notation](./notation.png)
+
 S => é um conjunto de todos os números "2 vezes x", onde "x é um membro do conjunto de numeros naturais (N)", se "x ao quadrado for maior que 3"
