@@ -39,6 +39,10 @@ class Pessoa():
   @nome.setter
   def nome(self, value):
     self._nome = value
+  # metodo estatico, da classe e nao da instancia
+  @staticmethod
+  def dizer_ola(nome: str):
+    print(f"Ola {nome}")
 
 
 pessoa1 = Pessoa("Julio")
@@ -48,6 +52,10 @@ pessoa2 = Pessoa("Julio")
 pessoa_dict = {"nome": "Julio"}
 pessoa3 = Pessoa(**pessoa_dict)
 print(pessoa3)
+
+
+Pessoa.dizer_ola("Julio")
+# Ola Julio
 
 
 print(pessoa1.nome)
