@@ -41,6 +41,7 @@ print(lista2)
 # [1, 2, 3, 4]
 
 print([i % 2 == 0 for i in lista2])
+# __iter__ called
 # [False, True, False, True]
 
 for i in lista2:
