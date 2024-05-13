@@ -54,8 +54,11 @@ pessoa3 = Pessoa(**pessoa_dict)
 print(pessoa3)
 
 
-Pessoa.dizer_ola("Julio")
+Pessoa.dizer_ola("John Doe")
 # Ola Julio
+# invocando funções dinamicamente
+getattr(Pessoa, "dizer_ola")("John Doe")
+# Ola John Doe
 
 
 print(pessoa1.nome)

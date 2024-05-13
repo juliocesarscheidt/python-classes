@@ -1,3 +1,10 @@
+"""
+Decoradores em Python são usados para modificar ou injetar código em funções ou classes.
+
+Usando decoradores, você pode envolver (wrap) uma chamada de método de classe ou função
+para que um trecho de código possa ser executado antes ou depois da execução do código original.
+"""
+
 def my_decorator(func):
   def wrapper():
     print('BEFORE calling the function')

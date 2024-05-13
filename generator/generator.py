@@ -1,3 +1,7 @@
+"""
+Um gerador (generator) é um objeto que pode ser chamado (callable), que atua como um iterável (iterable) (objeto no qual você pode iterar para ciclos)
+"""
+
 # with yield generator
 def impar(elems):
   for x in elems:
