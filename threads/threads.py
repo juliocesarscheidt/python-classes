@@ -20,9 +20,10 @@ if __name__ == "__main__":
     start = time()
 
     threads = []
-    sleep_time = 2 # 2 seconds
-    threads.append(Thread(target=func, args=["THREAD FUNCTION 1", sleep_time]))
-    threads.append(Thread(target=func, args=["THREAD FUNCTION 2", sleep_time]))
+    sleep_time = 60 # 2 seconds
+    
+    threads.append(Thread(target=func, args=["THREAD - FUNCTION 1", sleep_time]))
+    threads.append(Thread(target=func, args=["THREAD - FUNCTION 2", sleep_time]))
 
     for t in threads:
         t.start()
