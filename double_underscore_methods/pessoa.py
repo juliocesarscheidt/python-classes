@@ -13,45 +13,47 @@
 
 class Pessoa():
   # propriedades
-  nome: str
+  _nome: str
 
   # construtor - metodo chamado quando esta classe e instanciada
   def __init__(self, nome: str) -> None:
     print('__init__ called')
-    self.nome = nome
-  
+    self._nome = nome
+
   # metodo chamado quando esta classe e herdada
   def __init_subclass__(self) -> None:
     print('__init_subclass__ called')
-  
+
   # metodo de igualdade usado no ==
   def __eq__(self, other: object) -> bool:
     print('__eq__ called')
     if isinstance(other, Pessoa):
-      if other.nome == self.nome:
+      if other._nome == self._nome:
         return True
     return False
-  
+
   # negacao de igualdade usado no !=
   def __ne__(self, other: object) -> bool:
     print('__ne__ called')
     return not self.__eq__(other)
-  
+
   # metodo que retorna algo quando solicitado a mostrar aos humanos (ex. print)
   def __str__(self) -> str:
     print('__str__ called')
-    return f"Pessoa str {self.nome}"
+    return f"Pessoa str {self._nome}"
 
   # metodo que retorna o que você precisa ver sobre sua classe em mensagens de depuracao
   def __repr__(self) -> str:
     print('__repr__ called')
-    return f"Pessoa repr {self.nome}"
-  
+    return f"Pessoa repr {self._nome}"
+
   # metodo para iterar no objeto
   def __iter__(self):
     print('__iter__ called')
-    for letter in self.nome:
+    for letter in self._nome:
       yield letter
+    # for word in self._nome.split(' '):
+    #   yield word
 
   # getter
   @property
@@ -61,26 +63,26 @@ class Pessoa():
   # setter
   @nome.setter
   def nome(self, value):
-    self._nome = value  # getter
+    self._nome = value
 
 
 class PessoaFilho(Pessoa):
   pass
-  
+
 # __init_subclass__ called
 
 
-pessoa1 = Pessoa("John")
+pessoa1 = Pessoa("John Doe")
 # __init__ called
 
-pessoa1
-# Pessoa repr John
+# pessoa1
+# # Pessoa repr John
 
 print(pessoa1)
 # __str__ called
 # Pessoa str John
 
-pessoa2 = Pessoa("John")
+pessoa2 = Pessoa("John Doe")
 # __init__ called
 
 # compares value
@@ -101,4 +103,8 @@ __iter__ called
 -------- o --------
 -------- h --------
 -------- n --------
+--------   --------
+-------- D --------
+-------- o --------
+-------- e --------
 """
