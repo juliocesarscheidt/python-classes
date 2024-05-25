@@ -1,4 +1,4 @@
-# Bitwise
+# Bitwise¨& Bit Shift
 
 ```text
 1    0000 0001
@@ -16,7 +16,9 @@
 ...
 ```
 
-## bitwise AND (&)
+## Bitwise
+
+### Bitwise AND (&)
 
 AND só retorna 1 se os DOIS bits forem 1, senão retorna 0
 
@@ -84,7 +86,7 @@ and  1
 """
 ```
 
-## bitwise OR (|)
+### Bitwise OR (|)
 
 AND retorna 1 se ALGUM dos dois bits forem 1, senão retorna 0
 
@@ -136,7 +138,7 @@ or  100
 """
 ```
 
-## bitwise XOR (^)
+### Bitwise XOR (^)
 
 XOR é "ou exclusivo", retorna 1 se APENAS 1 dos dois bits forem 1
 (QUALQUER NUMERO XOR ELE MESMO É IGUAL A ZERO)
@@ -177,7 +179,7 @@ or  100
 """
 ```
 
-## bitwise NOT
+### Bitwise NOT
 
 Bitwise NOT para um inteiro de 32-bits "x" produz o resultado de "-(x + 1)"
 
@@ -198,7 +200,9 @@ Bitwise NOT para um inteiro de 32-bits "x" produz o resultado de "-(x + 1)"
   -(-8 + 1) = 7
 ```
 
-## bitwise SHIFT - Right Shift (>>) e Left Shift (<<)
+## Bit Shift
+
+### Right Shift (>>) & Left Shift (<<)
 
 move os bits para esquerda ou direta
 
