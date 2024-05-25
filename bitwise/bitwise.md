@@ -16,79 +16,89 @@
 ...
 ```
 
-
 ## bitwise AND (&)
 
-AND só retorna 1 se os DOIS bits forem 1
+AND só retorna 1 se os DOIS bits forem 1, senão retorna 0
 
 ```python
 1 & 1
 # 1
-```
 
+"""
     1
 and 1
     ----
     1
+"""
+```
 
 ```python
 2 & 2
 # 2
-```
 
+"""
     10
 and 10
     ----
     10
-
+"""
+```
 
 ```python
 8 & 4
 # 0
-```
 
+"""
     1000
 and  100
     ----
     0000
+"""
+```
 
-
->  verificando se um numero é divisivel por 2, aqui retorna 0
+> Verificando se um numero é divisivel por 2, aqui deve retornar 0
 
 ```python
-2 & 1 => 0
-3 & 1 => 1
-4 & 1 => 0
-5 & 1 => 1
+2 & 1
+# 0
+
+3 & 1
+# 1
+
+4 & 1
+# 0
+
+5 & 1
+# 1
 ```
 
 ```python
 2 & 1
 # 0
-```
 
+"""
     10
 and  1
     ----
     00
-
-
-
+"""
+```
 
 ## bitwise OR (|)
 
-AND retorna 1 se ALGUM dos dois bits forem 1
+AND retorna 1 se ALGUM dos dois bits forem 1, senão retorna 0
 
 ```python
 1 | 1
 # 1
-```
 
+"""
    1
 or 1
    ----
    1
-
+"""
+```
 
 ```python
 2 | 2
@@ -126,41 +136,52 @@ or  100
 """
 ```
 
-
 ## bitwise XOR (^)
-XOR é ou exclusivo, retorna 1 se APENAS 1 dos dois bits forem 1
+
+XOR é "ou exclusivo", retorna 1 se APENAS 1 dos dois bits forem 1
 (QUALQUER NUMERO XOR ELE MESMO É IGUAL A ZERO)
 
-1 ^ 1 => 0
-      
+```python
+1 ^ 1
+# 0
+
+"""
       1
 xor   1
       ----
       0
+"""
+```
 
+```python
+8 ^ 4
+# 12
 
-8 ^ 4 => 12
-
+"""
     1000
 xor  100
     ----
     1100
+"""
+```
 
+```python
+12 ^ 4
+# 8
 
-12 ^ 4 => 8
-
+"""
    1100
 or  100
    ----
    1000
-
-
-
+"""
+```
 
 ## bitwise NOT
 
 Bitwise NOT para um inteiro de 32-bits "x" produz o resultado de "-(x + 1)"
 
+```text
 ~256      => -257
   -(256 + 1) = -257
 
@@ -175,70 +196,90 @@ Bitwise NOT para um inteiro de 32-bits "x" produz o resultado de "-(x + 1)"
 
 ~-8       => 7
   -(-8 + 1) = 7
-
-
-
+```
 
 ## bitwise SHIFT - Right Shift (>>) e Left Shift (<<)
+
 move os bits para esquerda ou direta
 
-1 >> 1 => 0
+```python
+1 >> 1
+# 0
 
+"""
       0001
       ----
 >> 1  0000
+"""
+```
 
+```python
+2 >> 1
+# 1
 
-2 >> 1 => 1
-
+"""
       0010
       ----
 >> 1  0001
+"""
+```
 
+```python
+11 >> 1
+# 5
 
-11 >> 1 => 5
-
+"""
       1011
       ----
 >> 1  0101
+"""
+```
 
+```python
+11 >> 2
+# 2
 
-11 >> 2 => 2
-
+"""
       1011
       ----
 >> 2  0010
+"""
+```
 
+```python
+1 << 1
+# 2
 
-
-1 << 1 => 2
-
+"""
       0001
       ----
 << 1  0010
+"""
+```
 
+```python
+11 << 2
+# 44
 
-11 << 2 => 44
-
+"""
       0000 1011
       ----
 << 2  0010 1100
+"""
+```
 
+```python
+1 << 8
+# 256
 
-1 << 8 => 256
-
+"""
        0 0000 0001
 <<8    1 0000 0000
+"""
 
 int('100000000', 2) # ou int(0b100000000)
 # 256
 
 bin(256)
 # 0b100000000
-
-
-
-
-
-
-
+```
