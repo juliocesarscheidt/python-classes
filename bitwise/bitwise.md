@@ -1,4 +1,4 @@
-# Bitwise¨& Bit Shift
+# Bitwise & Bit Shift
 
 ```text
 1    0000 0001
