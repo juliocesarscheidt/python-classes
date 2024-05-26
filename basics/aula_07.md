@@ -14,15 +14,15 @@
 # class Pessoa(object):
 class Pessoa():
   # propriedades
-  nome: str
+  _nome: str
   # construtor
   def __init__(self, nome: str) -> None:
     print('__init__ called')
-    self.nome = nome
+    self._nome = nome
   def __eq__(self, other: object) -> bool:
     print('__eq__ called')
     if isinstance(other, Pessoa):
-      if other.nome == self.nome:
+      if other._nome == self._nome:
         return True
     return False
   def __ne__(self, other: object) -> bool:
@@ -30,7 +30,10 @@ class Pessoa():
     return not self.__eq__(other)
   def __str__(self) -> str:
     print('__str__ called')
-    return f"Pessoa {self.nome}"
+    return f"Pessoa Str {self._nome}"
+  def __repr__(self) -> str:
+    print('__str__ called')
+    return f"Pessoa Repr {self._nome}"
   # getter
   @property
   def nome(self):
@@ -65,7 +68,7 @@ print(pessoa1.nome)
 # Julio
 
 print(pessoa1)
-# Pessoa Julio
+# Pessoa Str Julio
 
 print(id(pessoa1)) # returns object memory address
 # 140228566496536
