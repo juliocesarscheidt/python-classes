@@ -6,7 +6,7 @@ from dataclasses import dataclass
 @dataclass
 class QueueElement():
   value: str
-  next: Optional = None
+  next: Optional[any] = None
 
 class Queue():
   _head: QueueElement

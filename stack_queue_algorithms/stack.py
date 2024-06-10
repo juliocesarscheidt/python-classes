@@ -6,7 +6,7 @@ from dataclasses import dataclass
 @dataclass
 class StackElement():
   value: str
-  next: Optional = None
+  next: Optional[any] = None
 
 class Stack():
   _top: StackElement
