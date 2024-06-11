@@ -148,6 +148,81 @@ class AVL():
     node.filho_direito = self.rotacao_direita(node.filho_direito)
     return self.rotacao_esquerda(node)
 
+  def delete(self, node: Node, valor: int):
+    if node is None:
+      return None
+
+    if node.valor != valor:
+      # percorre os filhos do node ate encontrar o node desejado
+      if valor < node.valor:
+        node.filho_esquerdo = self.delete(node.filho_esquerdo, valor)
+      else:
+        node.filho_direito = self.delete(node.filho_direito, valor)
+
+    # node.valor == valor
+    else:
+      if self.folha(node):
+        node = None
+        return None
+
+      elif node.filho_esquerdo is not None and node.filho_direito is not None:
+        # escolhe um dos lados do node para ser substituido com o node a ser excluido, escolhido o lado direito, pode ser aleatorio
+        node_filho = node.filho_direito
+
+        while node_filho.filho_direito is not None:
+          node_filho = node_filho.filho_direito
+
+        node.valor = node_filho.valor
+        node_filho.valor = valor
+
+        node.filho_direito = self.delete(node.filho_direito, valor)
+
+        return node
+
+      else:
+        node_filho = None
+
+        if node.filho_esquerdo is not None:
+          node_filho = node.filho_esquerdo
+        else:
+          node_filho = node.filho_direito
+
+        node_filho = None
+
+        return node_filho
+
+    node.altura = self.maior_altura(
+      self.altura_node(node.filho_esquerdo),
+      self.altura_node(node.filho_direito)
+    ) + 1
+
+    node = self.balancear(node)
+
+    return node
+
+  # inicia a partir do node folha mais distante e segue visitando os nodes folhas e internos de uma subarvore
+  # ao fim de uma subarvore, visita a raiz e segue para a proxima subarvore
+  def exibir_em_ordem(self, node: Node):
+    if node is not None:
+      self.exibir_em_ordem(node.filho_esquerdo)
+      print(node.valor, end=', ')
+      self.exibir_em_ordem(node.filho_direito)
+
+  # a partir da raiz, segue visitando primeiramente um node interno para depois visitar o node filho e/ou folha
+  def exibir_pre_ordem(self, node: Node):
+    if node is not None:
+      print(node.valor, end=', ')
+      self.exibir_pre_ordem(node.filho_esquerdo)
+      self.exibir_pre_ordem(node.filho_direito)
+
+  # inicia a partir do node folha mais distante e segue visitando primeiramente os nodes folhas, depois os nodes internos para por fim a raiz
+  def exibir_pos_ordem(self, node: Node):
+    if node is not None:
+      self.exibir_pos_ordem(node.filho_esquerdo)
+      self.exibir_pos_ordem(node.filho_direito)
+      print(node.valor, end=', ')
+
+
 """
 AVL exemplo a ser criada
 
@@ -161,6 +236,12 @@ AVL exemplo a ser criada
               50
       43             65
   40      45      55     75
+
+
+# AVL balanceada apos exclusao do 65
+              50
+      43             75
+  40      45      55
 
 """
 
@@ -222,3 +303,28 @@ print('avl.raiz', avl.raiz)
 #                                  filho_direito=Node(valor=75, filho_esquerdo=None, filho_direito=None, altura=0),
 #                                  altura=1),
 #               altura=2)
+
+avl.delete(avl.raiz, 65)
+
+print('avl.raiz', avl.raiz)
+# avl.raiz Node(valor=50,
+#               filho_esquerdo=Node(valor=43,
+#                                   filho_esquerdo=Node(valor=40, filho_esquerdo=None, filho_direito=None, altura=0), filho_direito=Node(valor=45, filho_esquerdo=None, filho_direito=None, altura=0),
+#                                   altura=1),
+#               filho_direito=Node(valor=75,
+#                                  filho_esquerdo=Node(valor=55, filho_esquerdo=None, filho_direito=None, altura=0),
+#                                  filho_direito=None,
+#                                  altura=1),
+#               altura=2)
+
+print('\nEM ORDEM')
+avl.exibir_em_ordem(avl.raiz)
+# 40, 43, 45, 50, 55, 75,
+
+print('\nPRE ORDEM')
+avl.exibir_pre_ordem(avl.raiz)
+# 50, 43, 40, 45, 75, 55,
+
+print('\nPOS ORDEM')
+avl.exibir_pos_ordem(avl.raiz)
+# 40, 45, 43, 55, 75, 50,
