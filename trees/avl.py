@@ -1,5 +1,6 @@
 from typing import Optional
 from dataclasses import dataclass
+import copy
 
 @dataclass
 class Node():
@@ -53,6 +54,18 @@ class AVL():
       self.pesquisa(node.filho_esquerdo, valor)
     else:
       self.pesquisa(node.filho_direito, valor)
+
+  def profundidade(self, node: Node):
+    profundidade_esquerda = 0
+    profundidade_direita = 0
+
+    if node.filho_esquerdo:
+      profundidade_esquerda = self.profundidade(node.filho_esquerdo)
+
+    if node.filho_direito:
+      profundidade_direita = self.profundidade(node.filho_direito)
+
+    return 1 + max(profundidade_esquerda, profundidade_direita)
 
   def maior_altura(self, altura_esquerda: int, altura_direita: int):
     return altura_esquerda if altura_esquerda > altura_direita else altura_direita
@@ -316,6 +329,9 @@ print('avl.raiz', avl.raiz)
 #                                  filho_direito=None,
 #                                  altura=1),
 #               altura=2)
+
+print('avl.profundidade', avl.profundidade(avl.raiz))
+# avl.profundidade 3
 
 print('\nEM ORDEM')
 avl.exibir_em_ordem(avl.raiz)
