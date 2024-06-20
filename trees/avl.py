@@ -44,16 +44,16 @@ class AVL():
     return node
 
   # o node aqui recebido sera o ponto de partida para tentar buscar o valor
-  def pesquisa(self, node: Node, valor: int):
+  def search(self, node: Node, valor: int):
     if node is None:
       return None
 
     if node.valor == valor:
       return node
     elif valor < node.valor:
-      self.pesquisa(node.filho_esquerdo, valor)
+      self.search(node.filho_esquerdo, valor)
     else:
-      self.pesquisa(node.filho_direito, valor)
+      self.search(node.filho_direito, valor)
 
   def profundidade(self, node: Node):
     profundidade_esquerda = 0
@@ -237,7 +237,7 @@ class AVL():
 
 
 """
-AVL exemplo a ser criada
+# AVL exemplo a ser criada
 
           50
       45      55
