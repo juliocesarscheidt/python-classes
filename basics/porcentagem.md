@@ -18,17 +18,17 @@ valor_inicial *= multiplicador
 ```
 
 ```python
-# valor_inicial = valor_inicial * (100 + x) / 100
+# valor_inicial = valor_inicial * ((100 + x) / 100)
 # 675.0
 
 # atribuicao direta
-# valor_inicial *= (100 + x) / 100
+# valor_inicial *= ((100 + x) / 100)
 # 675.0
 ```
 
 ```python
 def adicionar_porcentagem(valor, porcentagem):
-  return valor * (100 + x) / 100
+  return valor * ((100 + x) / 100)
 
 adicionar_porcentagem(500, 35)
 # 675.0
@@ -54,7 +54,7 @@ valor_inicial *= multiplicador
 
 ```python
 def subtrair_porcentagem(valor, porcentagem):
-  return valor * (100 - x) / 100
+  return valor * ((100 - x) / 100)
 
 subtrair_porcentagem(500, 35)
 # 325.0
