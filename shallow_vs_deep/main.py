@@ -111,13 +111,13 @@ print(lista_deep_copy)
 
 # removendo ultimo elemento da lista
 lista1.pop()
-# Pessoa=[Pessoa 4]
+# Pessoa=[Pessoa 3]
 
 print(lista1)
-# [Pessoa=[Pessoa 1000], Pessoa=[Pessoa 2000], Pessoa=[Pessoa 3]]
+# [Pessoa=[Pessoa 1000], Pessoa=[Pessoa 2000]]
 
 print(lista2)
-# [Pessoa=[Pessoa 1000], Pessoa=[Pessoa 2000], Pessoa=[Pessoa 3]]
+# [Pessoa=[Pessoa 1000], Pessoa=[Pessoa 2000]]
 
 print(lista_shallow_copy)
 # [Pessoa=[Pessoa 1000], Pessoa=[Pessoa 2000], Pessoa=[Pessoa 3]]
