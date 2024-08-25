@@ -1,9 +1,10 @@
 """
-lambda direta, anonima
+lambda
 
 sintaxe:
   (lambda <argumentos>: <operacao>)
 """
+
 # soma
 (lambda x, y: x + y)(4, 8)
 # 12
@@ -11,11 +12,6 @@ sintaxe:
 # multiplicacao
 print((lambda x, y: x * y)(2, 4))
 # 8
-
-# exponenciacao
-print((lambda x: x ** 2)(4))
-# 16
-
 
 # com multiplos parametros
 list(map(lambda x, y: x + y, [2, 4], [8, 4]))
@@ -25,8 +21,7 @@ list(map(lambda x, y: x + y, [2, 4], [8, 4]))
 
 
 # atribuindo a lambda a uma variavel
-somar = (lambda x, y: x + y)
-# somar = lambda x, y: x + y
+somar = (lambda x, y: x + y)  # ou lambda x, y: x + y
 somar(4, 8)
 # 12
 
@@ -39,23 +34,15 @@ sintaxe:
 """
 
 numbers = [1, 2, 3, 4, 5, 6]
-# numbers = list(range(1, 7))
 
 # using lambda with map
 squares_lambda = list(map(lambda x: x * x, numbers))
-# squares_lambda = sorted(map(lambda x: x * x, numbers))
 print(squares_lambda)
-# [1, 4, 9, 16, 25, 36]
-
-# using list comprehension
-squares_list_comprehension = [x * x for x in numbers]
-print(squares_list_comprehension)
 # [1, 4, 9, 16, 25, 36]
 
 
 def cube(x):
     return x ** 3
-
 
 def cube_lambda(x):
     return (lambda x: x ** 3)(x)
@@ -86,11 +73,6 @@ print(numbers_filter)
 # using lambda with filter
 evens_filter_lambda = list(filter(lambda x: x % 2 == 0, numbers))
 print(evens_filter_lambda)
-# [2, 4, 6]
-
-# using list comprehension
-evens_filter_list_comprehension = [x for x in numbers if x % 2 == 0]
-print(evens_filter_list_comprehension)
 # [2, 4, 6]
 
 
