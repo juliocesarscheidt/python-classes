@@ -1,5 +1,8 @@
 """
 lambda direta, anonima
+
+sintaxe:
+  (lambda <argumentos>: <operacao>)
 """
 # soma
 (lambda x, y: x + y)(4, 8)
@@ -30,6 +33,9 @@ somar(4, 8)
 
 """
 lambda map
+
+sintaxe:
+  map(lambda <argumentos>: <operacao>, <colecao>)
 """
 
 numbers = [1, 2, 3, 4, 5, 6]
@@ -68,6 +74,9 @@ print(cubes)
 
 """
 lambda filter
+
+sintaxe:
+  filter(lambda <argumentos>: <operacao/condicao>, <colecao>)
 """
 
 numbers_filter = list(filter(lambda x: x > 0 and x < 4, numbers))
@@ -87,13 +96,27 @@ print(evens_filter_list_comprehension)
 
 """
 lambda reduce
+
+sintaxe:
+  reduce(lambda <argumentos>: <operacao>, <colecao>, <accumulator inicial>)
 """
 
 from functools import reduce
 
-accumulator = 0
-print(reduce(lambda x, y: x + y, [1, 2, 3, 4], accumulator))
-# 1 + 2 = 3
-# 3 (resultado iteracao anterior) + 3 = 6
-# 6 (resultado iteracao anterior) + 4 = 10
+"""
+  primeiro parametro (acc) e o accumulator
+  segundo parametro (curr) e o elemento da iteracao atual
+"""
+
+reduce(lambda acc, curr: acc + curr, [1, 2, 3, 4], 0)
+# accumulator=0   |   x=0 + y=1     => 1
+# accumulator=1   |   x=1 + y=2     => 3
+# accumulator=3   |   x=3 + y=3     => 6
+# accumulator=6   |   x=6 + y=4     => 10
 # 10
+
+reduce(lambda acc, curr: acc, [1, 2, 3, 4], 10)
+# 10
+
+reduce(lambda acc, curr: curr, [1, 2, 3, 4], 10)
+# 4
