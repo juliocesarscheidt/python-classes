@@ -11,4 +11,4 @@ Segue uma forma de notação de definição de conjuntos matemáticos
 
 ![notation](./notation.png)
 
-S => é um conjunto de todos os números "2 vezes x", onde "x é um membro do conjunto de numeros naturais (N)", se "x ao quadrado for maior que 3"
+S é um conjunto, onde x é um membro dos números naturais (N), se x ao quadrado for > 3, e o resulutado será 2 vezes x.
