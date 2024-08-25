@@ -1,3 +1,6 @@
+"""
+lambda direta, anonima
+"""
 # soma
 (lambda x, y: x + y)(4, 8)
 # 12
@@ -10,12 +13,27 @@ print((lambda x, y: x * y)(2, 4))
 print((lambda x: x ** 2)(4))
 # 16
 
-numbers = [1, 2, 3, 4, 5, 6]
-# numbers = [6, 5, 4, 3, 2, 1]
+
+# com multiplos parametros
+list(map(lambda x, y: x + y, [2, 4], [8, 4]))
+# [10, 8]
+# 2 + 8 = 10
+# 4 + 4 = 4
+
+
+# atribuindo a lambda a uma variavel
+somar = (lambda x, y: x + y)
+# somar = lambda x, y: x + y
+somar(4, 8)
+# 12
+
 
 """
 lambda map
 """
+
+numbers = [1, 2, 3, 4, 5, 6]
+# numbers = list(range(1, 7))
 
 # using lambda with map
 squares_lambda = list(map(lambda x: x * x, numbers))
@@ -47,6 +65,7 @@ cubes = list(map(cube_lambda, numbers))
 print(cubes)
 # [1, 8, 27, 64, 125, 216]
 
+
 """
 lambda filter
 """
@@ -64,6 +83,7 @@ print(evens_filter_lambda)
 evens_filter_list_comprehension = [x for x in numbers if x % 2 == 0]
 print(evens_filter_list_comprehension)
 # [2, 4, 6]
+
 
 """
 lambda reduce
