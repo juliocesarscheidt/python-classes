@@ -2,33 +2,25 @@
 # added in Python 3.8
 # https://docs.python.org/3/whatsnew/3.8.html#assignment-expressions
 
-import unicodedata
-
-def normalize(text):
-  # Normalization Form Compatibility Decomposition
-  return unicodedata.normalize("NFKD", text).encode("ASCII", "ignore").decode("ASCII").lower()
-
-print(normalize('WRITÉ'))
-# write
-
 
 allowed_operations = ['read', 'write']
-requested_operations = ['reád', 'réad', 'READ', 'WRITÉ', 'DROP']
+requested_operations = ['READ', 'WRITE', 'UPDATE', 'INSERT', 'DROP']
 
 
 # list comprehension - sem o walrus operator
-allowed_list = [normalize(op) for op in requested_operations if normalize(op) in allowed_operations]
+allowed_list = [op.lower() for op in requested_operations if op.lower() in allowed_operations]
+# ['read', 'write']
 
 # list comprehension - usando walrus operator :=
 # ele criará a variável dentro do escopo para ser usada posteriormente
-allowed_list = [clean_op for op in requested_operations if (clean_op := normalize(op)) in allowed_operations]
+allowed_list = [op_lower for op in requested_operations if (op_lower := op.lower()) in allowed_operations]
 
 print(allowed_list)
-# ['read', 'read', 'read', 'write']
+# ['read', 'write']
 
 
 # variável ainda existe fora do seu escopo de criação
-print(clean_op)
+print(op_lower)
 # drop
 
 # if - usando walrus operator :=
