@@ -1,16 +1,21 @@
-from functools import reduce
+# soma
+(lambda x, y: x + y)(4, 8)
+# 12
 
-print((lambda x: x * x)(2))
-# 4
+# multiplicacao
 print((lambda x, y: x * y)(2, 4))
 # 8
+
+# exponenciacao
+print((lambda x: x ** 2)(4))
+# 16
 
 numbers = [1, 2, 3, 4, 5, 6]
 # numbers = [6, 5, 4, 3, 2, 1]
 
-print("##################### lambda map #####################")
-
-print("##################### squares #####################")
+"""
+lambda map
+"""
 
 # using lambda with map
 squares_lambda = list(map(lambda x: x * x, numbers))
@@ -22,8 +27,6 @@ print(squares_lambda)
 squares_list_comprehension = [x * x for x in numbers]
 print(squares_list_comprehension)
 # [1, 4, 9, 16, 25, 36]
-
-print("##################### cubes #####################")
 
 
 def cube(x):
@@ -44,7 +47,9 @@ cubes = list(map(cube_lambda, numbers))
 print(cubes)
 # [1, 8, 27, 64, 125, 216]
 
-print("##################### lambda filter #####################")
+"""
+lambda filter
+"""
 
 numbers_filter = list(filter(lambda x: x > 0 and x < 4, numbers))
 print(numbers_filter)
@@ -60,7 +65,11 @@ evens_filter_list_comprehension = [x for x in numbers if x % 2 == 0]
 print(evens_filter_list_comprehension)
 # [2, 4, 6]
 
-print("##################### lambda reduce #####################")
+"""
+lambda reduce
+"""
+
+from functools import reduce
 
 accumulator = 0
 print(reduce(lambda x, y: x + y, [1, 2, 3, 4], accumulator))
