@@ -1,3 +1,4 @@
+import os
 from time import time, sleep
 from threading import Thread, current_thread
 
@@ -10,6 +11,7 @@ def func(task, sleep_time, file_path) -> None:
     text = f.read()
     print(text)
     
+  print("PID", os.getpid())
   print(f"FINISHED {task}")
   return text
 
@@ -31,14 +33,18 @@ if __name__ == "__main__":
 STARTED THREAD 1 - READING ./file_1.txt
 STARTED THREAD 2 - READING ./file_2.txt
 Hello World 1
+PID 33648
 FINISHED THREAD 1
 Hello World 2
+PID 33648
 FINISHED THREAD 2
 
 STARTED THREAD 1 - READING ./file_1.txt
 STARTED THREAD 2 - READING ./file_2.txt
 Hello World 2
 Hello World 1
+PID 11280
 FINISHED THREAD 2
+PID 11280
 FINISHED THREAD 1
 """
