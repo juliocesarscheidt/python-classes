@@ -1,8 +1,5 @@
-import array
 import os
 import fcntl
-import struct
-import termios
 import time
 
 
