@@ -1,43 +1,50 @@
-import array, fcntl, struct, termios, os
+import array
+import os
+import fcntl
+import struct
+import termios
+import time
+
 
 def start_locking(lockfile_name):
-    with open(lockfile_name, 'w') as f:
-      try:
-        # fcntl.LOCK_EX - Acquire an exclusive lock
-        # fcntl.LOCK_NB - Bitwise OR with any of the other three LOCK_* constants to make the request non-blocking
-        fcntl.flock(f, fcntl.LOCK_EX | fcntl.LOCK_NB)
-      except e:
-        raise Exception("Cannot acquire lock")
+  f = open(lockfile_name, 'w')
 
-      print("Locking sucessful")
+  try:
+    # fcntl.LOCK_EX - Acquire an exclusive lock
+    # fcntl.LOCK_NB - Bitwise OR with any of the other three LOCK_* constants to make the request non-blocking
+    fcntl.flock(f, fcntl.LOCK_EX | fcntl.LOCK_NB)
+  except Exception as e:
+    raise Exception("Cannot acquire lock")
 
-      return f
+  print("Locking sucessful")
+
+  return f
 
 
 def end_locking(lockfile_fd, lockfile_name):
-    try:
-      # fcntl.LOCK_UN - Release an existing lock
-      # fcntl.LOCK_NB - Bitwise OR with any of the other three LOCK_* constants to make the request non-blocking
-      fcntl.flock(lockfile_fd, fcntl.LOCK_UN | fcntl.LOCK_NB)
-    except IOError, e:
-      raise Exception("Cannot release lock")
+  try:
+    # fcntl.LOCK_UN - Release an existing lock
+    # fcntl.LOCK_NB - Bitwise OR with any of the other three LOCK_* constants to make the request non-blocking
+    fcntl.flock(lockfile_fd, fcntl.LOCK_UN | fcntl.LOCK_NB)
+  except Exception as e:
+    raise Exception("Cannot release lock")
 
-    try:
-      os.unlink(lockfile_name)
-    except e:
-      raise Exception("Cannot unlink %s" % lockfile_name)
+  try:
+    os.unlink(lockfile_name)
+  except Exception as e:
+    raise Exception("Cannot unlink %s" % lockfile_name)
 
-    print("Unlocking sucessful")
+  print("Unlocking sucessful")
 
-    return
+  return
 
-def acquire_lock(lockfile_name, timeout=600):
+def acquire_lock(lockfile_name, timeout=300):
   start_time = time.time()
 
   while time.time() - start_time < timeout:
     try:
       return start_locking(lockfile_name)
-    except e:
+    except Exception as e:
       pass
 
     print("Could not acquire lockfile %s, waiting..." % lockfile_name)
@@ -47,9 +54,17 @@ def acquire_lock(lockfile_name, timeout=600):
   return None
 
 
-lockfile_name = '/var/lock/test'
-
+lockfile_name = '/var/lock/lock_file'
 lockfile_fd = acquire_lock(lockfile_name)
 
-end_locking(lockfile_fd)
+if not lockfile_fd:
+  raise Exception("Cannot acquire lock")
 
+time.sleep(5)
+
+end_locking(lockfile_fd, lockfile_name)
+
+"""
+Locking sucessful
+Unlocking sucessful
+"""
