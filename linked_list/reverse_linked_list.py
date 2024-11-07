@@ -1,5 +1,6 @@
 from linked_list import LinkedListNode, LinkedList
 
+
 # for a linked list with only next pointers
 # def reverse_linked_list(head: LinkedListNode):
 #   new_list = None
