@@ -19,12 +19,12 @@ def partition(arr: List[int], esquerda: int, direita: int):
       # inverte os valores
       arr[i], arr[j] = arr[j], arr[i]
       # print('partition swapping arr', arr)
-  
+
   # print('partition AFTER arr', arr, '| esquerda', esquerda, '| direita', direita)
-  
+
   arr[esquerda] = arr[j]
   arr[j] = pivo
-  
+
   # print('partition AFTER swapping arr', arr, '| esquerda', esquerda, '| direita', direita)
   return j
 
@@ -52,3 +52,4 @@ print(quicksort(arr))
 arr = [1, 2, 3, 4, 5]
 print(quicksort(arr))
 # [1, 2, 3, 4, 5]
+
