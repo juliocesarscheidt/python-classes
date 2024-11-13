@@ -33,7 +33,7 @@ def quicksort(arr: List[int], esquerda: int=0, direita: int=None):
     direita = len(arr) -1
   # print('-------------------- quicksort --------------------')
   i = 0
-  if direita > esquerda:
+  if esquerda < direita:
     # print('quicksort esquerda', esquerda, '| direita', direita)
     i = partition(arr, esquerda, direita)
     # print('quicksort i', i)
