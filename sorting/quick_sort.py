@@ -28,7 +28,9 @@ def partition(arr: List[int], esquerda: int, direita: int):
   # print('partition AFTER swapping arr', arr, '| esquerda', esquerda, '| direita', direita)
   return j
 
-def quicksort(arr: List[int], esquerda: int, direita: int):
+def quicksort(arr: List[int], esquerda: int=0, direita: int=None):
+  if direita is None:
+    direita = len(arr) -1
   # print('-------------------- quicksort --------------------')
   i = 0
   if direita > esquerda:
@@ -40,11 +42,13 @@ def quicksort(arr: List[int], esquerda: int, direita: int):
   return arr
 
 arr = [4, 2, 5, 1, 6, 3, 7]
-esquerda, direita = 0, len(arr) -1
-print(quicksort(arr, esquerda, direita))
+print(quicksort(arr))
 # [1, 2, 3, 4, 5, 6, 7]
 
 arr = [12, 45, 13, 5, 35, 18, 26]
-esquerda, direita = 0, len(arr) -1
-print(quicksort(arr, esquerda, direita))
+print(quicksort(arr))
 # [5, 12, 13, 18, 26, 35, 45]
+
+arr = [1, 2, 3, 4, 5]
+print(quicksort(arr))
+# [1, 2, 3, 4, 5]

@@ -54,3 +54,8 @@ print(mergesort(arr))
 arr = [12, 45, 13, 5, 35, 18, 26]
 print(mergesort(arr))
 # [5, 12, 13, 18, 26, 35, 45]
+
+arr = [1, 2, 3, 4, 5]
+print(mergesort(arr))
+# [1, 2, 3, 4, 5]
+
