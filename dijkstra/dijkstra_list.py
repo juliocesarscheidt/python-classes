@@ -20,22 +20,23 @@ def dijkstra(graph, start_node):
     print('----------------------------------------------')
 
     current_node = heapq.heappop(visited_nodes) # get (pop) the first element of visited_nodes - visited_nodes.pop(0)
-    # dijkstra current_node A
-    
-    current_distance = distances[current_node]
-    print('current_node', current_node, '| current_distance', current_distance)
-    # current_node A | current_distance 0
+    print('current_node', current_node)
+    # current_node A
+
+    current_node_distance = distances[current_node]
+    print('current_node_distance', current_node_distance)
+    # current_node_distance 0
 
     neighbors_distances = list(graph[current_node].items())
     print('neighbors_distances', neighbors_distances)
     # neighbors_distances [('B', 3), ('C', 8)]
     
-    for neighbor_node, neighbor_distance in neighbors_distances:
-      distance = current_distance + neighbor_distance
-      print('neighbor_node', neighbor_node, '| neighbor_distance', neighbor_distance, '| distance', distance)
-      # neighbor_node B | neighbor_distance 3 | distance 3
-      if distance < distances[neighbor_node]:
-        distances[neighbor_node] = distance
+    for neighbor, weight in neighbors_distances:
+      distance = current_node_distance + weight
+      print('neighbor', neighbor, '| weight', weight, '| distance', distance)
+      # neighbor B | weight 3 | distance 3
+      if distance < distances[neighbor]:
+        distances[neighbor] = distance
     
     print('distances', distances)
     

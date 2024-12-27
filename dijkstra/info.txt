@@ -1,0 +1,7 @@
+
+A complexidade espacial do algoritmo de Dijkstra é de O(n)
+
+E a complexidade temporal, dependendo da implementação é de O((N+M)log N), se utilizar lista de adjacência e uma heap binária (fila de prioridade),
+ou O(M + N log N) utilizando uma lista de adjacência e uma heap de Fibonacci.
+
+A complexidade espacial é O(n), mas a melhor complexidade temporal possível é O(M + N log N).
