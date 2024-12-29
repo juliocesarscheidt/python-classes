@@ -24,16 +24,16 @@ class Queue():
   def enqueue(self, element) -> None:
     queue_element = QueueElement(element)
     queue_element.next = None
-    
+
     # if is the first element on the queue, add it to the head
     if self._tail is None:
       self._head = queue_element
     # otherwise, the new element will be now the last one on the queue
     else:
       self._tail.next = queue_element
-    
+
     self._tail = queue_element
-    
+
     self._size = self._size + 1
 
   # removes the element from the head and returns it
@@ -45,12 +45,12 @@ class Queue():
 
     self._head = self._head.next
     self._size = self._size - 1
-    
+
     if self.empty():
       self._tail = None
 
     return value
-    
+
   # returns the numbers of elements inside the queue
   def size(self) -> int:
     return self._size
@@ -58,7 +58,7 @@ class Queue():
   # returns the head of the queue
   def head(self) -> int:
     return self._head.value if self._head is not None else None
-  
+
   # returns if the queue is empty
   def empty(self) -> bool:
     return self._head is None
@@ -74,7 +74,7 @@ class Queue():
   def __iter__(self):
     while not self.empty():
       yield self.dequeue()
-  
+
   def __str__(self):
     return str([element for element in self.__iter__()])
 
