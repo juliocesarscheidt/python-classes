@@ -46,3 +46,26 @@ def remove_accents(text):
 
 print(remove_accents('café'))
 # cafe
+
+
+def remove_diacritics_preserve_script(text):
+  """
+  Remove diacritics while preserving the original script.
+  Works for Arabic, Greek, and other non-Latin scripts.
+  """
+  # Normalize to NFD (Canonical Decomposition)
+  # This separates base characters from combining marks
+  nfd_form = unicodedata.normalize('NFD', text)
+
+  # Filter out combining marks (category 'Mn')
+  # This removes diacritics while keeping base characters
+  filtered = ''.join(
+    char for char in nfd_form 
+    if unicodedata.category(char) != 'Mn'
+  )
+
+  # Normalize back to NFC (Canonical Composition) for consistency
+  return unicodedata.normalize("NFC", filtered)
+
+print(remove_diacritics_preserve_script("Café Júlio César"))
+# Cafe Julio Cesar
